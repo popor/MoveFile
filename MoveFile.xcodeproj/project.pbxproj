@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1876ADB2236196820033F684 /* script.sh in Resources */ = {isa = PBXBuildFile; fileRef = 1876ADAF236196820033F684 /* script.sh */; };
+		1876ADB3236196820033F684 /* STPrivilegedTask.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1876ADB0236196820033F684 /* STPrivilegedTask.rtf */; };
+		1876ADB4236196820033F684 /* copy.sh in Resources */ = {isa = PBXBuildFile; fileRef = 1876ADB1236196820033F684 /* copy.sh */; };
 		18CC39CD21C0D9D000237BB7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CC39CC21C0D9D000237BB7 /* AppDelegate.m */; };
 		18CC39D221C0D9D200237BB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18CC39D121C0D9D200237BB7 /* Assets.xcassets */; };
 		18CC39D521C0D9D200237BB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18CC39D321C0D9D200237BB7 /* Main.storyboard */; };
@@ -26,6 +29,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1876ADAF236196820033F684 /* script.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = script.sh; sourceTree = "<group>"; };
+		1876ADB0236196820033F684 /* STPrivilegedTask.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = STPrivilegedTask.rtf; sourceTree = "<group>"; };
+		1876ADB1236196820033F684 /* copy.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = copy.sh; sourceTree = "<group>"; };
+		1891DDAA2361748400B96E88 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		18CC39C821C0D9D000237BB7 /* MoveFile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoveFile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18CC39CB21C0D9D000237BB7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18CC39CC21C0D9D000237BB7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -76,6 +83,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1876ADAE236196820033F684 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				1876ADAF236196820033F684 /* script.sh */,
+				1876ADB0236196820033F684 /* STPrivilegedTask.rtf */,
+				1876ADB1236196820033F684 /* copy.sh */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
 		18CC39BF21C0D9D000237BB7 = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +193,7 @@
 		18CC39FC21C0DB5E00237BB7 /* RootVC */ = {
 			isa = PBXGroup;
 			children = (
+				1876ADAE236196820033F684 /* service */,
 				18CC3A0021C0DB5E00237BB7 /* model */,
 				18CC3A0721C0DB5E00237BB7 /* View */,
 				18CC39FD21C0DB5E00237BB7 /* Presenter */,
@@ -240,6 +258,7 @@
 		7E8C60E11D29D59C48DFDCAA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1891DDAA2361748400B96E88 /* Security.framework */,
 				BC5609B1E6F8013C408AC81B /* Pods_MoveFile.framework */,
 			);
 			name = Frameworks;
@@ -314,7 +333,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				18CC39D221C0D9D200237BB7 /* Assets.xcassets in Resources */,
+				1876ADB2236196820033F684 /* script.sh in Resources */,
 				18CC39D521C0D9D200237BB7 /* Main.storyboard in Resources */,
+				1876ADB3236196820033F684 /* STPrivilegedTask.rtf in Resources */,
+				1876ADB4236196820033F684 /* copy.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,14 +536,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MoveFile/MoveFile.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5TP98E5R7H;
 				GCC_PREFIX_HEADER = "MoveFile/MoveFile-prefix.pch";
 				INFOPLIST_FILE = MoveFile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.popor.MoveFile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -533,14 +558,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MoveFile/MoveFile.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5TP98E5R7H;
 				GCC_PREFIX_HEADER = "MoveFile/MoveFile-prefix.pch";
 				INFOPLIST_FILE = MoveFile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.popor.MoveFile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

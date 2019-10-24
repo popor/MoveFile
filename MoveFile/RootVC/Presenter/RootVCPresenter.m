@@ -693,10 +693,16 @@ static int CellHeight = 23;
      
     }
     
+    // MARK: 生效的办法
+    // 设法找到MoveFile.entitlements, 更改里面的App Sandbox为NO.不然无法触发获取权限的提示框
+    
     NSDictionary* errorDict;
     NSAppleEventDescriptor* returnDescriptor = NULL;
     
     NSString * shell             = [NSString stringWithFormat:@"do shell script \"\n%@ \n%@\" with administrator privileges", cpShell, chmodShell];
+    // 增加了用户名字密码之后,仍然未在新版xcode执行.
+    shell = [NSString stringWithFormat:@"do shell script \"\n%@ \n%@\" user name \"%@\" password \"%@\" with administrator privileges", cpShell, chmodShell, @"apple", @"popor"];
+    
     NSAppleScript * scriptObject = [[NSAppleScript alloc] initWithSource:shell];
     returnDescriptor             = [scriptObject executeAndReturnError: &errorDict];
     
