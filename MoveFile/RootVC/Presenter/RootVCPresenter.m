@@ -701,7 +701,7 @@ static int CellHeight = 23;
     
     NSString * shell             = [NSString stringWithFormat:@"do shell script \"\n%@ \n%@\" with administrator privileges", cpShell, chmodShell];
     // 增加了用户名字密码之后,仍然未在新版xcode执行.
-    shell = [NSString stringWithFormat:@"do shell script \"\n%@ \n%@\" user name \"%@\" password \"%@\" with administrator privileges", cpShell, chmodShell, @"apple", @"popor"];
+    //shell = [NSString stringWithFormat:@"do shell script \"\n%@ \n%@\" user name \"%@\" password \"%@\" with administrator privileges", cpShell, chmodShell, @"apple", @"popor"];
     
     NSAppleScript * scriptObject = [[NSAppleScript alloc] initWithSource:shell];
     returnDescriptor             = [scriptObject executeAndReturnError: &errorDict];
