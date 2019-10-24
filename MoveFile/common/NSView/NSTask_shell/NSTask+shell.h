@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+/*
+ 执行不需要权限的shell没问题
+ */
 @interface NSTask (shell)
 
 + (NSString *)shell:(NSString *)shellStr;

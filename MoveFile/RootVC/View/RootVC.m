@@ -139,22 +139,28 @@
     });
     
     [self addMenu];
-
-    self.tagTV_CSV = [self addTagTVs];
-    self.tagTV     = self.tagTV_CSV.documentView;
-    self.tagTV.menu = self.tagTVClickMenu;
-    self.tagTV.allowsEmptySelection = NO;
-    [self.tagTV selectRowIndexes:[NSIndexSet indexSetWithIndex:0] byExtendingSelection:NO];
-    [self.tagTV registerForDraggedTypes:@[NSPasteboardNameDrag]];
     
-    self.folderTV_CSV = [self addFolderTVs];
-    self.folderTV     = self.folderTV_CSV.documentView;
-    self.folderTV.menu = self.folderTVClickMenu;
-    [self.folderTV registerForDraggedTypes:@[NSPasteboardNameDrag]];
+    {
+        self.tagTV_CSV  = [self addTagTVs];
+        self.tagTV      = self.tagTV_CSV.documentView;
+        self.tagTV.menu = self.tagTVClickMenu;
+        self.tagTV.allowsEmptySelection = NO;
+        [self.tagTV selectRowIndexes:[NSIndexSet indexSetWithIndex:0] byExtendingSelection:NO];
+        [self.tagTV registerForDraggedTypes:@[NSPasteboardNameDrag]];
+    }
     
-    //[self.folderTV setDoubleAction:NSSelectorFromString(@"doubleClick:")]; // 双击事件
-    [self.tagTV setTarget:self.present];
-    [self.tagTV setAction:@selector(tableViewClick:)];// 单击事件
+    {
+        self.folderTV_CSV  = [self addFolderTVs];
+        self.folderTV      = self.folderTV_CSV.documentView;
+        self.folderTV.menu = self.folderTVClickMenu;
+        [self.folderTV registerForDraggedTypes:@[NSPasteboardNameDrag]];
+    }
+    
+    {
+        //[self.folderTV setDoubleAction:NSSelectorFromString(@"doubleClick:")]; // 双击事件
+        [self.tagTV setTarget:self.present];
+        [self.tagTV setAction:@selector(tableViewClick:)];// 单击事件
+    }
 }
 
 - (NSScrollView *)addTagTVs {

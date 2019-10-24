@@ -14,28 +14,24 @@
 /**
  *  对外版本号
  */
-+ (NSString *)getAppVersion_short
-{
++ (NSString *)getAppVersion_short {
     return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
 }
 
 /**
  *  对内build号
  */
-+ (NSString *)getAppVersion_build
-{
++ (NSString *)getAppVersion_build {
     return [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
 }
 
 //获取BundleID
-+ (NSString*)getBundleID
-{
++ (NSString*)getBundleID {
     return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"];
 }
 
 //获取app的名字
-+ (NSString*)getAppName
-{
++ (NSString*)getAppName {
     return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"];
 }
 

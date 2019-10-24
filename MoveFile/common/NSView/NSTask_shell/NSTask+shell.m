@@ -20,7 +20,7 @@
     [task setArguments: arguments];
     
     // 新建输出管道作为Task的输出
-    NSPipe *pipe = [NSPipe pipe];
+    NSPipe *pipe = [NSPipe pipe]; 
     [task setStandardOutput:pipe];
     
     // 开始task
