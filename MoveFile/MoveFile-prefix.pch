@@ -1,0 +1,15 @@
+//
+//  MoveFile-prefix.pch
+//  MoveFile
+//
+//  Created by apple on 2018/12/12.
+//  Copyright © 2018 apple. All rights reserved.
+//
+
+#ifndef MoveFile_prefix_h
+#define MoveFile_prefix_h
+
+#import <Masonry/Masonry.h>
+#import "NSView_prefix.h"
+
+#endif /* MoveFile_prefix_h */

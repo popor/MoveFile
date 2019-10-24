@@ -1,0 +1,82 @@
+PODS:
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - JSONModel (1.8.0)
+  - Masonry (1.1.0)
+  - MASShortcut (2.4.0)
+  - PoporFMDB (1.01):
+    - FMDB
+    - PoporFoundation/NSString
+  - PoporFoundation (1.09):
+    - PoporFoundation/KVO (= 1.09)
+    - PoporFoundation/NSArray (= 1.09)
+    - PoporFoundation/NSAssistant (= 1.09)
+    - PoporFoundation/NSData (= 1.09)
+    - PoporFoundation/NSDate (= 1.09)
+    - PoporFoundation/NSDecimalNumber (= 1.09)
+    - PoporFoundation/NSDictionary (= 1.09)
+    - PoporFoundation/NSFileManager (= 1.09)
+    - PoporFoundation/NSObject (= 1.09)
+    - PoporFoundation/NSString (= 1.09)
+    - PoporFoundation/NSURL (= 1.09)
+    - PoporFoundation/Os (= 1.09)
+    - PoporFoundation/Prefix (= 1.09)
+  - PoporFoundation/KVO (1.09)
+  - PoporFoundation/NSArray (1.09):
+    - PoporFoundation/NSObject
+    - PoporFoundation/Prefix
+  - PoporFoundation/NSAssistant (1.09):
+    - PoporFoundation/Os
+    - PoporFoundation/Prefix
+  - PoporFoundation/NSData (1.09)
+  - PoporFoundation/NSDate (1.09):
+    - PoporFoundation/NSString
+  - PoporFoundation/NSDecimalNumber (1.09):
+    - PoporFoundation/NSObject
+  - PoporFoundation/NSDictionary (1.09):
+    - PoporFoundation/NSObject
+    - PoporFoundation/Prefix
+  - PoporFoundation/NSFileManager (1.09)
+  - PoporFoundation/NSObject (1.09)
+  - PoporFoundation/NSString (1.09):
+    - PoporFoundation/Os
+  - PoporFoundation/NSURL (1.09):
+    - PoporFoundation/NSObject
+    - PoporFoundation/NSString
+  - PoporFoundation/Os (1.09)
+  - PoporFoundation/Prefix (1.09):
+    - PoporFoundation/Os
+  - ReactiveObjC (3.1.1)
+
+DEPENDENCIES:
+  - FMDB
+  - JSONModel
+  - Masonry
+  - MASShortcut
+  - PoporFMDB
+  - PoporFoundation
+  - ReactiveObjC
+
+SPEC REPOS:
+  trunk:
+    - FMDB
+    - JSONModel
+    - Masonry
+    - MASShortcut
+    - PoporFMDB
+    - PoporFoundation
+    - ReactiveObjC
+
+SPEC CHECKSUMS:
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MASShortcut: d9e4909e878661cc42877cc9d6efbe638273ab57
+  PoporFMDB: 8743b825107234a368e293ec6cb56fb0bf14f8a7
+  PoporFoundation: f080da19da868487426639289bd3a263a7c65aea
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+
+PODFILE CHECKSUM: 527edbab674714df39a6e45c6e037cc9954b87aa
+
+COCOAPODS: 1.8.4
