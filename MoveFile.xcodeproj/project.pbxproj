@@ -577,6 +577,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 5TP98E5R7H;
 				GCC_PREFIX_HEADER = "MoveFile/MoveFile-prefix.pch";
 				INFOPLIST_FILE = MoveFile/Info.plist;
@@ -585,6 +586,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.popor.MoveFile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -599,6 +601,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 5TP98E5R7H;
 				GCC_PREFIX_HEADER = "MoveFile/MoveFile-prefix.pch";
 				INFOPLIST_FILE = MoveFile/Info.plist;
@@ -607,6 +610,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.popor.MoveFile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
