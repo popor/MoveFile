@@ -8,6 +8,7 @@
 #import "RootVC.h"
 #import "RootVCPresenter.h"
 #import "RootVCInteractor.h"
+#import "WindowFrameTool.h"
 
 @interface RootVC ()
 
@@ -161,6 +162,13 @@
         [self.tagTV setTarget:self.present];
         [self.tagTV setAction:@selector(tableViewClick:)];// 单击事件
     }
+    
+    WindowFrameTool * tool = [WindowFrameTool share];
+    __weak typeof(self) weakSelf = self;
+    tool.blockResetTv = ^(){
+        [weakSelf.present resetTagTVWidth];
+        
+    };
 }
 
 - (NSScrollView *)addTagTVs {
@@ -230,7 +238,7 @@
     [tableView reloadData];
     
     [tableContainer mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.tagTV_CSV.mas_right).mas_offset(2);
+        make.left.mas_equalTo(self.tagTV_CSV.mas_right).mas_offset(5);
         make.top.mas_equalTo(self.moveBT.mas_bottom).mas_offset(10);
         make.right.mas_equalTo(-10);
         make.bottom.mas_equalTo(self.tagTV_CSV.mas_bottom);

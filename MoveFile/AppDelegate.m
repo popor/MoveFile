@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "SqliteCofing.h"
+#import "WindowFrameTool.h"
 
 @interface AppDelegate ()
 
@@ -26,6 +27,21 @@
     self.window = window;
     
     [self resumeLastFrameOrigin];
+    
+    WindowFrameTool * tool = [WindowFrameTool share];
+    __weak typeof(self) weakSelf = self;
+    tool.blockResetWindow = ^(){
+        NSScreen * screen = [NSScreen mainScreen];
+        int w = MIN(1000, screen.frame.size.width*0.8);
+        int h = MIN(600, screen.frame.size.height*0.6);;
+        int x = (screen.frame.size.width - w)/2;
+        int y = (screen.frame.size.height - h)/2;
+        
+        CGRect rect = CGRectMake(x, y, w, h);
+        
+        [SqliteCofing updateWindowFrame:rect];
+        [weakSelf.window setFrame:rect display:YES];
+    };
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
@@ -65,16 +81,13 @@
 }
 
 - (IBAction)resetWindowFrame:(id)sender {
-    NSScreen * screen = [NSScreen mainScreen];
-    int w = MIN(1000, screen.frame.size.width*0.8);
-    int h = MIN(600, screen.frame.size.height*0.6);;
-    int x = (screen.frame.size.width - w)/2;
-    int y = (screen.frame.size.height - h)/2;
-    
-    CGRect rect = CGRectMake(x, y, w, h);
-    
-    [SqliteCofing updateWindowFrame:rect];
-    [self.window setFrame:rect display:YES];
+    WindowFrameTool * tool = [WindowFrameTool share];
+    if (tool.blockResetWindow) {
+        tool.blockResetWindow();
+    }
+    if (tool.blockResetTv) {
+        tool.blockResetTv();
+    }
 }
 
 @end

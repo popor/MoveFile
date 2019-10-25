@@ -31,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		182F295A2362DBC800E4F446 /* SqlitePrifix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SqlitePrifix.h; sourceTree = "<group>"; };
 		1868E4BE236283760077D524 /* WindowFrameTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WindowFrameTool.h; sourceTree = "<group>"; };
 		1868E4BF236283760077D524 /* WindowFrameTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WindowFrameTool.m; sourceTree = "<group>"; };
 		1868E4C3236284240077D524 /* SqliteCofing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SqliteCofing.h; sourceTree = "<group>"; };
@@ -92,9 +93,9 @@
 		1868E4C1236283D10077D524 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				182F295A2362DBC800E4F446 /* SqlitePrifix.h */,
+				1868E4C92362BC360077D524 /* WindowFrameTool */,
 				1868E4C22362840E0077D524 /* SqliteCofing */,
-				1868E4BE236283760077D524 /* WindowFrameTool.h */,
-				1868E4BF236283760077D524 /* WindowFrameTool.m */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -106,6 +107,15 @@
 				1868E4C4236284240077D524 /* SqliteCofing.m */,
 			);
 			path = SqliteCofing;
+			sourceTree = "<group>";
+		};
+		1868E4C92362BC360077D524 /* WindowFrameTool */ = {
+			isa = PBXGroup;
+			children = (
+				1868E4BE236283760077D524 /* WindowFrameTool.h */,
+				1868E4BF236283760077D524 /* WindowFrameTool.m */,
+			);
+			path = WindowFrameTool;
 			sourceTree = "<group>";
 		};
 		1876ADAE236196820033F684 /* service */ = {

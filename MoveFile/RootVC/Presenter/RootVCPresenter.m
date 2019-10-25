@@ -252,7 +252,7 @@ static int CellHeight = 23;
     }
 }
 
-// !!!: column resize
+// !!!: column resize 系统通知事件,类似delegate.
 - (void)tableViewColumnDidResize:(NSNotification *)notification {
     if (!self.isAllowColumnUpdateWidth) {
         return;
@@ -268,18 +268,27 @@ static int CellHeight = 23;
             //NSLog(@"notification: %@ \n tableColumn.identifier:%@  width:%i", [notification description], column.identifier,  (int)column.width);
             //int NSOldWidth = (int)[notification.userInfo[@"NSOldWidth"] intValue];
             //NSLog(@"folder TV update column width : id:%@,  width:%i", column.identifier,  (int)column.width);
-            NSLog(@"2  folder TV");
+            NSLog(@"更新 folder TV width");
             [PDB updateClass:[ColumnEntity class] key:@"width" equal:@(column.width) where:@"columnID" equal:column.identifier];
         }
     }else if ([column.identifier hasPrefix:@"tag"]) {
         //NSLog(@"tag TV update column width : id:%@,  width:%i", column.identifier,  (int)column.width);
-        NSLog(@"1  tag TV");
+        NSLog(@"更新 tag TV width");
         [PDB updateClass:[ColumnEntity class] key:@"width" equal:@(column.width) where:@"columnID" equal:column.identifier];
         
         [self.view.tagTV_CSV mas_updateConstraints:^(MASConstraintMaker *make) {
             make.width.mas_equalTo(column.width + 20);
         }];
     }
+}
+
+- (void)resetTagTVWidth {
+    int width = 200;
+    [PDB updateClass:[ColumnEntity class] key:@"width" equal:@(width) where:@"columnID" equal:TvColumnId_tag1];
+    
+    [self.view.tagTV_CSV mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(width + 20);
+    }];
 }
 
 // !!!: row 排序模块

@@ -13,7 +13,7 @@ static NSString * SortKey     = @"sort";
 
 @interface MoveTagEntity : NSObject
 
-@property (nonatomic        ) NSInteger sort;
+@property (nonatomic        ) NSInteger  sort;
 @property (nonatomic, strong) NSString * tagID;
 @property (nonatomic, strong) NSString * title;
 @property (nonatomic, strong) NSString * color;

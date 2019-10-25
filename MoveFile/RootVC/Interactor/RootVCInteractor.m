@@ -38,9 +38,9 @@
     if (_columnTagArray.count != 1) {
         [PDB deleteClass:[ColumnEntity class] where:@"type" equal:ColumnTypeTag];
         _columnTagArray = [NSMutableArray new];
-        NSArray * IDArray        = @[@"tag1"];
-        NSArray * titleArray     = @[@"标签"];
-        NSArray * tipArray       = @[@""];
+        NSArray * IDArray        = @[TvColumnId_tag1];
+        NSArray * titleArray     = @[TvColumnTitle_tag1];
+        NSArray * tipArray       = @[TvColumnTip_tag1];
         
         NSArray * widthArray     = @[@(ColumnTagMiniWidth)];
         NSArray * miniWidthArray = @[@(ColumnTagMiniWidth)];
@@ -70,9 +70,9 @@
     if (_columnFolderArray.count == 0 || _columnFolderArray.count != 5) {
         [PDB deleteClass:[ColumnEntity class] where:@"type" equal:ColumnTypeFolder];
         _columnFolderArray = [NSMutableArray new];
-        NSArray * IDArray        = @[@"folder0", @"folder1", @"folder2", @"folder3", @"folder4"];
-        NSArray * titleArray     = @[@"序号", @"选择", @"源文件或文件夹", @"转移到文件夹", @"备注"];
-        NSArray * tipArray       = @[@"", @"如果未勾选，转移的时候将忽略该选项", @"需要转移文件夹的地址", @"文件夹转移到的地址", @"描述信息"];
+        NSArray * IDArray        = @[TvColumnId_folder0, TvColumnId_folder1, TvColumnId_folder2, TvColumnId_folder3, TvColumnId_folder4];
+        NSArray * titleArray     = @[TvColumnTitle_folder0, TvColumnTitle_folder1, TvColumnTitle_folder2, TvColumnTitle_folder3, TvColumnTitle_folder4];
+        NSArray * tipArray       = @[TvColumnTip_folder0, TvColumnTip_folder1, TvColumnTip_folder2, TvColumnTip_folder3, TvColumnTip_folder4];
         
         NSArray * widthArray     = @[@(30), @(30), @(400), @(400), @(50)];
         NSArray * miniWidthArray = @[@(30), @(30), @(100), @(100), @(50)];

@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-static NSString * ColumnTypeTag    = @"tag";
-static NSString * ColumnTypeFolder = @"folder";
+static NSString * ColumnTypeTag     = @"tag";
+static NSString * ColumnTypeFolder  = @"folder";
 
 static NSInteger ColumnTagMiniWidth = 100;
 

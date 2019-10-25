@@ -10,8 +10,14 @@
 
 @implementation WindowFrameTool
 
-- (void)resetWindowFrame {
-    
++ (instancetype)share {
+    static dispatch_once_t once;
+    static id instance;
+    dispatch_once(&once, ^{
+        instance = [self new];
+        
+    });
+    return instance;
 }
 
 @end

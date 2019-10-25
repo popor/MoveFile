@@ -10,11 +10,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-static NSString * const WindowFrameKey = @"WindowFrame";
-
 @interface WindowFrameTool : NSObject
 
-- (void)resetWindowFrame;
++ (instancetype)share;
+
+@property (nonatomic, copy  ) BlockPVoid blockResetWindow;
+@property (nonatomic, copy  ) BlockPVoid blockResetTv;
 
 @end
 

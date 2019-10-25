@@ -10,6 +10,7 @@
 #import "MoveTagEntity.h"
 #import "MoveFolderEntity.h"
 #import "ColumnEntity.h"
+#import "SqliteCofing.h"
 
 // 处理Entity事件
 @interface RootVCInteractor : NSObject

@@ -14,16 +14,15 @@
 
 #import <PoporFMDB/PoporFMDB.h>
 
-static NSString * const WindowFrameKey = @"WindowFrame";
-
 @implementation SqliteCofing
 
+// MARK: 创建table
 + (void)updateTable {
     // 更新PoporFMDB
     [PoporFMDB injectTableArray:@[[MoveFolderEntity class], [MoveTagEntity class], [ColumnEntity class]]];
-    
 }
 
+// MARK: 主 window frame 相关
 + (void)updateWindowFrame:(CGRect)rect {
     [PoporFMDB updatePlistKey:WindowFrameKey value:NSStringFromRect(rect)];
 }
@@ -35,5 +34,8 @@ static NSString * const WindowFrameKey = @"WindowFrame";
 + (NSString *)getWindowFrame {
     return [PoporFMDB getPlistKey:WindowFrameKey];
 }
+
+// MARK: 其他
+
 
 @end
