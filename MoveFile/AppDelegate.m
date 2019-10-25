@@ -7,13 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import <PoporFMDB/PoporFMDB.h>
-
-static NSString * const WindowFrameKey = @"WindowFrame";
-
-#import "MoveFolderEntity.h"
-#import "MoveTagEntity.h"
-#import "ColumnEntity.h"
+#import "SqliteCofing.h"
 
 @interface AppDelegate ()
 
@@ -23,8 +17,7 @@ static NSString * const WindowFrameKey = @"WindowFrame";
 
 - (void)applicationWillFinishLaunching:(NSNotification *)notification {
     
-    // 更新PoporFMDB
-    [PoporFMDB injectTableArray:@[[MoveFolderEntity class], [MoveTagEntity class], [ColumnEntity class]]];
+    [SqliteCofing updateTable];
     
     NSWindow * window = [NSApplication sharedApplication].keyWindow;
     window.minSize = CGSizeMake(600, 400);
@@ -40,25 +33,24 @@ static NSString * const WindowFrameKey = @"WindowFrame";
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
-    // Insert code here to tear down your application
-    [PDB updatePlistKey:WindowFrameKey value:NSStringFromRect(self.window.frame)];
+    [SqliteCofing updateWindowFrame:self.window.frame];
 }
 
 - (void)resumeLastFrameOrigin {
-    NSString * windowFrameString = [PDB getPlistKey:WindowFrameKey];
+    NSString * windowFrameString = [SqliteCofing getWindowFrame];
     if (windowFrameString) {
         // 计算合适x.
-        CGRect frame = NSRectFromString(windowFrameString);
-        
-        NSPoint point = frame.origin;
+        CGRect frame      = NSRectFromString(windowFrameString);
+        NSPoint point     = frame.origin;
         NSScreen * screen = [NSScreen mainScreen];
-        CGFloat x = MAX(point.x, 150);
-        x         = MIN(x, screen.frame.size.width - 150);
-        point     = CGPointMake(x, point.y);
+        CGFloat x         = MAX(point.x, 150);
+        x                 = MIN(x, screen.frame.size.width - 150);
+        point             = CGPointMake(x, point.y);
+        
         [self.window setFrame:CGRectMake(point.x, point.y, frame.size.width, frame.size.height) display:YES];
         
     }else{
-        [PDB addPlistKey:WindowFrameKey value:NSStringFromRect(self.window.frame)];
+        [SqliteCofing addWindowFrame:self.window.frame];
     }
 }
 
@@ -70,6 +62,19 @@ static NSString * const WindowFrameKey = @"WindowFrame";
         [self.window makeKeyAndOrderFront:self];
         return YES;
     }
+}
+
+- (IBAction)resetWindowFrame:(id)sender {
+    NSScreen * screen = [NSScreen mainScreen];
+    int w = MIN(1000, screen.frame.size.width*0.8);
+    int h = MIN(600, screen.frame.size.height*0.6);;
+    int x = (screen.frame.size.width - w)/2;
+    int y = (screen.frame.size.height - h)/2;
+    
+    CGRect rect = CGRectMake(x, y, w, h);
+    
+    [SqliteCofing updateWindowFrame:rect];
+    [self.window setFrame:rect display:YES];
 }
 
 @end

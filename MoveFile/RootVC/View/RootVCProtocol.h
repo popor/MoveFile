@@ -60,4 +60,6 @@ static NSInteger folderTVTag = 1;
 
 - (void)moveAction:(id)sender;
 
+- (void)resetWindowFrame:(id)sender;
+
 @end

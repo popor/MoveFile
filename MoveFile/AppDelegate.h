@@ -12,5 +12,7 @@
 
 @property (nonatomic, weak  ) NSWindow * window;
 
+- (IBAction)resetWindowFrame:(id)sender;
+
 @end
 

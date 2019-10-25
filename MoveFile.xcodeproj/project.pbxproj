@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1868E4C0236283760077D524 /* WindowFrameTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1868E4BF236283760077D524 /* WindowFrameTool.m */; };
+		1868E4C5236284240077D524 /* SqliteCofing.m in Sources */ = {isa = PBXBuildFile; fileRef = 1868E4C4236284240077D524 /* SqliteCofing.m */; };
 		1876ADB2236196820033F684 /* script.sh in Resources */ = {isa = PBXBuildFile; fileRef = 1876ADAF236196820033F684 /* script.sh */; };
 		1876ADB3236196820033F684 /* STPrivilegedTask.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1876ADB0236196820033F684 /* STPrivilegedTask.rtf */; };
 		1876ADB4236196820033F684 /* copy.sh in Resources */ = {isa = PBXBuildFile; fileRef = 1876ADB1236196820033F684 /* copy.sh */; };
@@ -29,6 +31,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1868E4BE236283760077D524 /* WindowFrameTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WindowFrameTool.h; sourceTree = "<group>"; };
+		1868E4BF236283760077D524 /* WindowFrameTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WindowFrameTool.m; sourceTree = "<group>"; };
+		1868E4C3236284240077D524 /* SqliteCofing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SqliteCofing.h; sourceTree = "<group>"; };
+		1868E4C4236284240077D524 /* SqliteCofing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SqliteCofing.m; sourceTree = "<group>"; };
 		1876ADAF236196820033F684 /* script.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = script.sh; sourceTree = "<group>"; };
 		1876ADB0236196820033F684 /* STPrivilegedTask.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = STPrivilegedTask.rtf; sourceTree = "<group>"; };
 		1876ADB1236196820033F684 /* copy.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = copy.sh; sourceTree = "<group>"; };
@@ -83,6 +89,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1868E4C1236283D10077D524 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				1868E4C22362840E0077D524 /* SqliteCofing */,
+				1868E4BE236283760077D524 /* WindowFrameTool.h */,
+				1868E4BF236283760077D524 /* WindowFrameTool.m */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		1868E4C22362840E0077D524 /* SqliteCofing */ = {
+			isa = PBXGroup;
+			children = (
+				1868E4C3236284240077D524 /* SqliteCofing.h */,
+				1868E4C4236284240077D524 /* SqliteCofing.m */,
+			);
+			path = SqliteCofing;
+			sourceTree = "<group>";
+		};
 		1876ADAE236196820033F684 /* service */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +141,7 @@
 			children = (
 				18CC39E121C0DB5E00237BB7 /* common */,
 				18CC39DF21C0DB0C00237BB7 /* other */,
+				1868E4C1236283D10077D524 /* Config */,
 				18CC39E021C0DB1E00237BB7 /* App */,
 				18CC39FC21C0DB5E00237BB7 /* RootVC */,
 			);
@@ -392,9 +418,11 @@
 				18CC3A2121C0DB5E00237BB7 /* MoveTagEntity.m in Sources */,
 				18CC39D821C0D9D200237BB7 /* main.m in Sources */,
 				18CC3A2921C0DB5E00237BB7 /* RootVCInteractor.m in Sources */,
+				1868E4C0236283760077D524 /* WindowFrameTool.m in Sources */,
 				18CC3A1C21C0DB5E00237BB7 /* NSBundle+Tool.m in Sources */,
 				18CC3A2221C0DB5E00237BB7 /* ColumnEntity.m in Sources */,
 				18CC3A2421C0DB5E00237BB7 /* EditableTextField.m in Sources */,
+				1868E4C5236284240077D524 /* SqliteCofing.m in Sources */,
 				18CC3A2321C0DB5E00237BB7 /* NSTextField+Address.m in Sources */,
 				18CC3A1D21C0DB5E00237BB7 /* iToast.m in Sources */,
 				18CC3A1E21C0DB5E00237BB7 /* NSTask+shell.m in Sources */,

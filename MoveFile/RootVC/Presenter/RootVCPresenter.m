@@ -715,6 +715,10 @@ static int CellHeight = 23;
     }
 }
 
+- (void)resetWindowFrame:(id)sender {
+    
+}
+
 #pragma mark - Interactor_EventHandler
 
 @end
