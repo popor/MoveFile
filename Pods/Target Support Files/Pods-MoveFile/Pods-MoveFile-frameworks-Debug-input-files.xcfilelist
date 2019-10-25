@@ -1,7 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-MoveFile/Pods-MoveFile-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework
 ${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework
-${BUILT_PRODUCTS_DIR}/MASShortcut/MASShortcut.framework
 ${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework
 ${BUILT_PRODUCTS_DIR}/PoporFMDB/PoporFMDB.framework
 ${BUILT_PRODUCTS_DIR}/PoporFoundation/PoporFoundation.framework

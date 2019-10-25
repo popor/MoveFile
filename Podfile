@@ -14,11 +14,11 @@ target 'MoveFile' do
     pod 'FMDB'
     pod 'ReactiveObjC'
     
-    # 快捷键?
-    pod 'MASShortcut'
-
     pod 'PoporFoundation'
     pod 'PoporFMDB'
+    
+    # 快捷键?
+    # pod 'MASShortcut'
     
     # 更新插件
     # pod 'Sparkle' # 自更新设置
