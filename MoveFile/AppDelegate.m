@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  MoverCode
+//  MoveFile
 //
 //  Created by apple on 2018/3/10.
 //  Copyright © 2018年 apple. All rights reserved.
@@ -23,7 +23,7 @@
     NSWindow * window = [NSApplication sharedApplication].keyWindow;
     window.minSize = CGSizeMake(600, 400);
     
-    window.title = @"MoverFile";
+    window.title = @"Move File";
     self.window = window;
     
     [self resumeLastFrameOrigin];
