@@ -446,7 +446,7 @@ static int CellHeight = 23;
 }
 
 - (void)openDbFolderBTAction {
-    [self openPath:PDBShare.DBPath];
+    [self openPath:[PoporFMDBPath share].DBPath];
 }
 
 - (void)cellMoveBTAction:(NSButton *)bt {

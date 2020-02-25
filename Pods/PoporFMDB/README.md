@@ -22,6 +22,22 @@ it, simply add the following line to your Podfile:
 pod 'PoporFMDB'
 ```
 
+1.02
+getCreateSQLS:with:
+该方法检测实体是否包含id,如果包含就不创建自增id INTEGER
+
+1.03
+getCreateSQLS getInsertSQLS 针对有id类型的sql优化,
+
+1.04
+部分函数增加 返回执行结果
+
+1.05
+addPlistKey 增加检查 key 是否重复
+
+1.07
+允许修改db path
+
 ## Author
 
 wangkq, 908891024@qq.com
