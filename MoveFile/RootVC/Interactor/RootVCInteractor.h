@@ -22,6 +22,7 @@
 @property (nonatomic, strong) NSMutableArray * columnFolderArray;
 
 - (void)updateMoveFolderArrayWith:(MoveTagEntity *)entity;
+- (void)updateMoveFolderArrayWithTagId:(NSString *)tagID;
 
 - (void)addMoveTagTitle:(NSString *)title;
 - (void)deleteTagEntity:(MoveTagEntity *)entity;

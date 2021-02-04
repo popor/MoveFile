@@ -97,12 +97,18 @@
 
 - (void)updateMoveFolderArrayWith:(MoveTagEntity *)entity {
     if (entity) {
-        _folderEntityArray = [PDB arrayClass:[MoveFolderEntity class] where:TagIDKey equal:entity.tagID orderBy:SortKey asc:YES];
-        
+        [self updateMoveFolderArrayWithTagId:entity.tagID];
     }else{
         [_folderEntityArray removeAllObjects];
     }
-    
+}
+
+- (void)updateMoveFolderArrayWithTagId:(NSString *)tagID {
+    if (tagID) {
+        _folderEntityArray = [PDB arrayClass:[MoveFolderEntity class] where:TagIDKey equal:tagID orderBy:SortKey asc:YES];
+    }else{
+        [_folderEntityArray removeAllObjects];
+    }
 }
 
 #pragma mark - VCDataSource
@@ -123,6 +129,10 @@
 }
 
 - (void)addNewPath:(NSString *)path tagID:(NSString *)tagID {
+    if (!self.folderEntityArray) {
+        [self updateMoveFolderArrayWithTagId:tagID];
+    }
+    
     MoveFolderEntity * entity = [MoveFolderEntity new];
     entity.sort       = self.folderEntityArray.count + 1;
     entity.folderID   = [self getUUID];
