@@ -644,6 +644,31 @@ static int CellHeight = 23;
     [self.view.folderTV reloadData];
 }
 
+// 键盘通知事件
+- (void)folderTVDeleteNcEvent {
+    NSInteger selectRow = self.view.folderTV.selectedRow;
+    if (selectRow < 0 || selectRow > self.interactor.folderEntityArray.count) {
+        return;
+    }
+    
+    MoveFolderEntity * entity = self.interactor.folderEntityArray[selectRow];
+    
+    [self.interactor deleteEntity:entity];
+    [self.interactor.folderEntityArray removeObject:entity];
+    
+    [self.view.folderTV reloadData];
+    
+    if (self.interactor.folderEntityArray.count > 0) {
+        if (selectRow < self.interactor.folderEntityArray.count) {
+            NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:selectRow];
+            [self.view.folderTV selectRowIndexes:indexSet byExtendingSelection:NO];
+        } else {
+            NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:self.interactor.folderEntityArray.count -1];
+            [self.view.folderTV selectRowIndexes:indexSet byExtendingSelection:NO];
+        }
+    }
+}
+
 - (void)folderTVClearAllAction:(id)sender {
     NSInteger row    = self.view.tagTV.selectedRow;
     if (row == -1) {

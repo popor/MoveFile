@@ -13,4 +13,7 @@
 #import "NSView_prefix.h"
 #import <ReactiveObjC/ReactiveObjC.h>
 
+
+static NSString * NcKey_keyboardDeleteAction = @"keyboardDeleteAction";
+
 #endif /* MoveFile_prefix_h */

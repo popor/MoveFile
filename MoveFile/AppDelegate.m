@@ -90,4 +90,8 @@
     }
 }
 
+- (IBAction)keyboardDeleteAction:(id)sender {
+    [[NSNotificationCenter defaultCenter] postNotificationName:NcKey_keyboardDeleteAction object:nil];
+}
+
 @end

@@ -334,6 +334,17 @@
 - (void)startEvent {
     [self.present startEvent];
     
+    [self addRacNc];
+}
+
+// 通知事件
+- (void)addRacNc {
+    @weakify(self);
+    [[[[NSNotificationCenter defaultCenter] rac_addObserverForName:NcKey_keyboardDeleteAction object:nil] takeUntil:[self rac_willDeallocSignal]] subscribeNext:^(NSNotification * _Nullable x) {
+        @strongify(self);
+        
+        [self.present folderTVDeleteNcEvent];
+    }];
 }
 
 // -----------------------------------------------------------------------------

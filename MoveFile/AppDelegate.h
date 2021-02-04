@@ -14,5 +14,7 @@
 
 - (IBAction)resetWindowFrame:(id)sender;
 
+- (IBAction)keyboardDeleteAction:(id)sender;
+
 @end
 

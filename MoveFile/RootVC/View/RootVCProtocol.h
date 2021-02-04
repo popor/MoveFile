@@ -67,4 +67,7 @@ static NSInteger folderTVTag = 1;
 
 - (void)addFilePathArray:(NSArray *)pathArray;
 
+// 键盘通知事件
+- (void)folderTVDeleteNcEvent;
+
 @end
