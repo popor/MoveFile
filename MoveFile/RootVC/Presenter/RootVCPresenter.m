@@ -247,7 +247,7 @@ static int CellHeight = 23;
         for (int i=0; i< tableView.tableColumns.count; i++) {
             //NSLog(@"i = %i id:%@", i, tableColumn.identifier);
             NSTableColumn * column = tableView.tableColumns[i];
-            [PDB updateClass:[ColumnEntity class] key:@"sort" equal:@(i) where:@"columnID" equal:column.identifier];
+            [PDB updateClass:[ColumnEntity class] set:@"sort" equal:@(i) where:@"columnID" equal:column.identifier];
         }
     }
 }
@@ -269,12 +269,12 @@ static int CellHeight = 23;
             //int NSOldWidth = (int)[notification.userInfo[@"NSOldWidth"] intValue];
             //NSLog(@"folder TV update column width : id:%@,  width:%i", column.identifier,  (int)column.width);
             NSLog(@"更新 folder TV width");
-            [PDB updateClass:[ColumnEntity class] key:@"width" equal:@(column.width) where:@"columnID" equal:column.identifier];
+            [PDB updateClass:[ColumnEntity class] set:@"width" equal:@(column.width) where:@"columnID" equal:column.identifier];
         }
     }else if ([column.identifier hasPrefix:@"tag"]) {
         //NSLog(@"tag TV update column width : id:%@,  width:%i", column.identifier,  (int)column.width);
         NSLog(@"更新 tag TV width");
-        [PDB updateClass:[ColumnEntity class] key:@"width" equal:@(column.width) where:@"columnID" equal:column.identifier];
+        [PDB updateClass:[ColumnEntity class] set:@"width" equal:@(column.width) where:@"columnID" equal:column.identifier];
         
         [self.view.tagTV_CSV mas_updateConstraints:^(MASConstraintMaker *make) {
             make.width.mas_equalTo(column.width + 20);
@@ -284,7 +284,7 @@ static int CellHeight = 23;
 
 - (void)resetTagTVWidth {
     int width = 200;
-    [PDB updateClass:[ColumnEntity class] key:@"width" equal:@(width) where:@"columnID" equal:TvColumnId_tag1];
+    [PDB updateClass:[ColumnEntity class] set:@"width" equal:@(width) where:@"columnID" equal:TvColumnId_tag1];
     
     [self.view.tagTV_CSV mas_updateConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(width + 20);
@@ -325,11 +325,20 @@ static int CellHeight = 23;
     NSInteger from = [currencyCode integerValue];
     if (tableView == self.view.folderTV) {
         [self resortTV:tableView form:from to:row array:self.interactor.folderEntityArray];
-        [self updateArray:self.interactor.folderEntityArray key:@"sort" whereKey:@"folderID"];
+        
+        for (NSInteger i = 0; i<self.interactor.folderEntityArray.count; i++) {
+            MoveFolderEntity * entity = self.interactor.folderEntityArray[i];
+            [PDB updateEntity:entity set:@"sort" equal:@(i) where:@"folderID" equal:entity.folderID];
+        }
+        
         return YES;
     }else if(tableView == self.view.tagTV){
         [self resortTV:tableView form:from to:row array:self.interactor.tagEntityArray];
-        [self updateArray:self.interactor.tagEntityArray key:@"sort" whereKey:@"tagID"];
+        
+        for (NSInteger i = 0; i<self.interactor.tagEntityArray.count; i++) {
+            MoveTagEntity * entity = self.interactor.tagEntityArray[i];
+            [PDB updateEntity:entity set:@"sort" equal:@(i) where:@"tagID" equal:entity.tagID];
+        }
         return YES;
     }else{
         return NO;
@@ -347,13 +356,6 @@ static int CellHeight = 23;
             [array insertObject:entity atIndex:to-1];
         }
         [tableView reloadData];
-    }
-}
-
-- (void)updateArray:(NSMutableArray *)array key:(NSString *)key whereKey:(NSString *)whereKey {
-    for (NSInteger i = 0; i<array.count; i++) {
-        id sortEntity = array[i];
-        [PDB updateEntity:sortEntity key:key equal:@(i) where:whereKey];
     }
 }
 

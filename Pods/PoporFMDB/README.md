@@ -38,6 +38,21 @@ addPlistKey 增加检查 key 是否重复
 1.07
 允许修改db path
 
+1.08
+移除了 PoporFMDB 的 + (BOOL)updateEntity:(id)entity key:(NSString *)key equal:(id)value where:(NSString *)whereKey equal:(id)whereValue, 内部一个给entity赋值的多余操作.
+
+DELETE 和 UPDATE 的 set 和 where 允许传递数组.
+
+1.09
+sql 语句 where key 增加了适应nsarray 功能. 但是要取消排序功能, 不知道为啥失效了.
+修复对CGFloat参数的支持.
+
+1.10
+删除增加了 like 和 =
+
+1.11
+更新增加了 like 和 =,  查询更正了like和=逻辑
+
 ## Author
 
 wangkq, 908891024@qq.com

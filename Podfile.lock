@@ -4,9 +4,8 @@ PODS:
   - FMDB/standard (2.7.5)
   - JSONModel (1.8.0)
   - Masonry (1.1.0)
-  - PoporFMDB (1.07):
+  - PoporFMDB (1.11):
     - FMDB
-    - PoporFoundation/NSString
   - PoporFoundation (1.24):
     - PoporFoundation/KVO (= 1.24)
     - PoporFoundation/NSArray (= 1.24)
@@ -58,7 +57,7 @@ DEPENDENCIES:
   - FMDB
   - JSONModel
   - Masonry
-  - PoporFMDB
+  - PoporFMDB (= 1.11)
   - PoporFoundation (= 1.24)
   - ReactiveObjC
 
@@ -75,10 +74,10 @@ SPEC CHECKSUMS:
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  PoporFMDB: aeb61e83c9f2d815a695b74e086499cdf842ca92
+  PoporFMDB: 2fd1a10f04d35f6fda053364aa4e955f7c273e50
   PoporFoundation: 0861e1064f0afb658c1254537e0447123f135ac3
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
 
-PODFILE CHECKSUM: e7781dbd123154d21531c764ea355b9333490185
+PODFILE CHECKSUM: 25168f4e34efdb1de55306abdb64396bbcbdc3c0
 
 COCOAPODS: 1.10.1

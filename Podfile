@@ -15,7 +15,7 @@ target 'MoveFile' do
     pod 'ReactiveObjC'
     
     pod 'PoporFoundation', '1.24'
-    pod 'PoporFMDB'
+    pod 'PoporFMDB', '1.11'
     
     # 快捷键?
     # pod 'MASShortcut'

@@ -23,8 +23,7 @@
 }
 
 - (void)initData {
-    _tagEntityArray = [PDB arrayClass:[MoveTagEntity class] orderBy:SortKey asc:YES];
-
+    _tagEntityArray = [PDB arrayClass:[MoveTagEntity class]];
     if (_tagEntityArray.count > 0) {
         [self updateMoveFolderArrayWith: [_tagEntityArray firstObject]];
     }
@@ -34,7 +33,7 @@
 }
 
 - (void)initColumnTagArray {
-    _columnTagArray = [PDB arrayClass:[ColumnEntity class] where:@"type" equal:ColumnTypeTag orderBy:@"sort" asc:YES];
+    _columnTagArray = [PDB arrayClass:[ColumnEntity class] where:@"type" equal:ColumnTypeTag];
     if (_columnTagArray.count != 1) {
         [PDB deleteClass:[ColumnEntity class] where:@"type" equal:ColumnTypeTag];
         _columnTagArray = [NSMutableArray new];
@@ -65,7 +64,7 @@
 }
 
 - (void)initColumnFolderArray {
-    _columnFolderArray = [PDB arrayClass:[ColumnEntity class] where:@"type" equal:ColumnTypeFolder orderBy:@"sort" asc:YES];
+    _columnFolderArray = [PDB arrayClass:[ColumnEntity class] where:@"type" equal:ColumnTypeFolder];
     
     if (_columnFolderArray.count == 0 || _columnFolderArray.count != 5) {
         [PDB deleteClass:[ColumnEntity class] where:@"type" equal:ColumnTypeFolder];
@@ -105,7 +104,7 @@
 
 - (void)updateMoveFolderArrayWithTagId:(NSString *)tagID {
     if (tagID) {
-        _folderEntityArray = [PDB arrayClass:[MoveFolderEntity class] where:TagIDKey equal:tagID orderBy:SortKey asc:YES];
+        _folderEntityArray = [PDB arrayClass:[MoveFolderEntity class] where:TagIDKey equal:tagID];
     }else{
         [_folderEntityArray removeAllObjects];
     }
@@ -124,7 +123,7 @@
 }
 
 - (void)deleteTagEntity:(MoveTagEntity *)entity {
-    [PDB deleteEntity:entity where:TagIDKey];
+    [PDB deleteEntity:entity where:TagIDKey equal:entity.tagID];
     [PDB deleteClass:[MoveFolderEntity class] where:TagIDKey equal:entity.tagID];
 }
 
@@ -154,27 +153,27 @@
 }
 
 - (void)deleteEntity:(MoveFolderEntity *)entity {
-    [PDB deleteEntity:entity where:FolderIDKey];
+    [PDB deleteEntity:entity where:FolderIDKey equal:entity.folderID];
 }
 
 - (void)updateTagEntity:(MoveTagEntity *)entity title:(NSString *)title {
-    [PDB updateEntity:entity key:@"title" equal:title where:TagIDKey];
+    [PDB updateEntity:entity set:@"title" equal:title where:TagIDKey equal:entity.tagID];
 }
 
 - (void)updateEntity:(MoveFolderEntity *)entity move:(BOOL)move {
-    [PDB updateEntity:entity key:@"move" equal:@(move) where:FolderIDKey];
+    [PDB updateEntity:entity set:@"move" equal:@(move) where:FolderIDKey equal:entity.folderID];
 }
 
 - (void)updateEntity:(MoveFolderEntity *)entity tip:(NSString *)tip {
-    [PDB updateEntity:entity key:@"tip" equal:tip where:FolderIDKey];
+    [PDB updateEntity:entity set:@"tip" equal:tip where:FolderIDKey equal:entity.folderID];
 }
 
 - (void)updateEntity:(MoveFolderEntity *)entity originPath:(NSString *)originPath {
-    [PDB updateEntity:entity key:@"originPath" equal:originPath where:FolderIDKey];
+    [PDB updateEntity:entity set:@"originPath" equal:originPath where:FolderIDKey equal:entity.folderID];
 }
 
 - (void)updateEntity:(MoveFolderEntity *)entity targetPath:(NSString *)targetPath {
-    [PDB updateEntity:entity key:@"targetPath" equal:targetPath where:FolderIDKey];
+    [PDB updateEntity:entity set:@"targetPath" equal:targetPath where:FolderIDKey equal:entity.folderID];
 }
 
 @end
