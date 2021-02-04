@@ -23,7 +23,14 @@
 }
 
 - (void)initData {
-    _tagEntityArray = [PDB arrayClass:[MoveTagEntity class]];
+    {   // 排序
+        _tagEntityArray = [PDB arrayClass:[MoveTagEntity class]];
+        
+        NSArray *result = [_tagEntityArray sortedArrayUsingComparator:^NSComparisonResult(MoveTagEntity * _Nonnull obj1, MoveTagEntity * _Nonnull obj2) {
+            return obj1.sort<obj2.sort ? NSOrderedAscending:NSOrderedDescending;
+        }];
+        _tagEntityArray = result.mutableCopy;
+    }
     if (_tagEntityArray.count > 0) {
         [self updateMoveFolderArrayWith: [_tagEntityArray firstObject]];
     }
@@ -104,7 +111,15 @@
 
 - (void)updateMoveFolderArrayWithTagId:(NSString *)tagID {
     if (tagID) {
-        _folderEntityArray = [PDB arrayClass:[MoveFolderEntity class] where:TagIDKey equal:tagID];
+        {   // 排序
+            _folderEntityArray = [PDB arrayClass:[MoveFolderEntity class] where:TagIDKey equal:tagID];
+            
+            NSArray *result = [_folderEntityArray sortedArrayUsingComparator:^NSComparisonResult(MoveFolderEntity * _Nonnull obj1, MoveFolderEntity * _Nonnull obj2) {
+                return obj1.sort<obj2.sort ? NSOrderedAscending:NSOrderedDescending;
+            }];
+            _folderEntityArray = result.mutableCopy;
+        }
+        
     }else{
         [_folderEntityArray removeAllObjects];
     }
