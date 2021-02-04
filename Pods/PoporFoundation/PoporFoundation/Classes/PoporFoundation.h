@@ -56,8 +56,12 @@ FOUNDATION_EXPORT const unsigned char PoporFoundationExtensionVersionString[];
 #import "NSObject+pSwizzling.h"
 
 // -NSString
-#import "NSString+pEmail.h"
+#import "NSAttributedString+pAtt.h"
+#import "NSMutableAttributedString+pAtt.h"
+#import "NSMutableParagraphStyle+pAtt.h"
 #import "NSString+pAtt.h"
+
+#import "NSString+pEmail.h"
 #import "NSString+pIDCard.h"
 #import "NSString+pMD5.h"
 #import "NSString+pSize.h"
@@ -74,5 +78,11 @@ FOUNDATION_EXPORT const unsigned char PoporFoundationExtensionVersionString[];
 #import "Size+pPrefix.h"
 #import "Fun+pPrefix.h"
 
+// - 触感反馈
+#import "PFeedbackGenerator.h"
+
 // -Os+pPrefix
 #import "Os+pPrefix.h"
+
+// -NSTimer
+#import "NSTimer+pSafe.h"

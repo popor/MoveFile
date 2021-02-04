@@ -445,6 +445,28 @@ static int CellHeight = 23;
     }
 }
 
+- (void)addFilePathArray:(NSArray *)pathArray {
+ 
+    if (self.interactor.tagEntityArray.count == 0) {
+        AlertToastTitleTime(@"请先增加标签", 3, self.view.vc.view);
+        return;
+    }
+    MoveTagEntity * tagEntity;
+    if (self.view.tagTV.selectedRow > -1) {
+        tagEntity = self.interactor.tagEntityArray[self.view.tagTV.selectedRow];
+    }else{
+        AlertToastTitleTime(@"请先选择标签", 3, self.view.vc.view);
+        return;
+    }
+    
+    for (int i = 0; i<pathArray.count; i++) {
+        NSString * path = [pathArray[i] path];
+        [self.interactor addNewPath:path tagID:tagEntity.tagID];
+    }
+    
+    [self.view.folderTV reloadData];
+}
+
 - (void)openDbFolderBTAction {
     [self openPath:[PoporFMDBPath share].DBPath];
 }

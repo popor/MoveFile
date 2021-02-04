@@ -21,6 +21,15 @@
 }
 
 #pragma mark - 正则部分
+/*
+ NSString * text = @"Liu De Hua";
+ NSString * reg0 = @"(\\w)\\w*\\s*";
+ NSString * reg1 = @"$1"; // $0 是自身, $1是第一个小括号里面的东西
+ 
+ text = [text replaceWithREG:reg0 newString:reg1];
+ 
+ theNewString 可以是string, 也可以是reg.
+ */
 - (NSString *)replaceWithREG:(NSString * _Nonnull)reg newString:(NSString * _Nonnull)theNewString {
     if (!self) {
         return nil;
@@ -71,7 +80,7 @@
 }
 
 #pragma mark - 10-16转换
-+ (NSString *)stringToHexWithInt:(int)theNumber {
++ (NSString *)stringToHexWithInt:(NSInteger)theNumber {
     return [NSString stringWithFormat:@"%x", (unsigned int) theNumber];
 }
 
@@ -79,7 +88,7 @@
     if (!theNumber) {
         return @"";
     }
-    return [NSString stringWithFormat:@"%i", (int)strtoul([theNumber UTF8String], 0, 16)];
+    return [NSString stringWithFormat:@"%li", (long)strtoul([theNumber UTF8String], 0, 16)];
 }
 
 - (NSDictionary *)toDic {
@@ -109,6 +118,11 @@
 #pragma mark 空格URL
 - (NSString *)toUrlEncode {
     // https://www.jianshu.com/p/ffbb95e01489
+    
+    // 为了屏蔽pod警告, 单独处理了tvOS模式, 目前不太针对tvOS模式.
+#if TARGET_OS_TV
+    return [self stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
+#else
     return CFBridgingRelease
     (
      CFURLCreateStringByAddingPercentEscapes
@@ -120,8 +134,21 @@
       kCFStringEncodingUTF8
       )
      ) ;
-    // 下面的方法,多次转换后,会不一样.不够安全.
-    //return [self stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
+#endif
+    
+    //    return CFBridgingRelease
+    //    (
+    //     CFURLCreateStringByAddingPercentEscapes
+    //     (
+    //      kCFAllocatorDefault,
+    //      (CFStringRef)self,
+    //      (CFStringRef)@"!$&'()*+,-./:;=?@_~%#[]",
+    //      NULL,
+    //      kCFStringEncodingUTF8
+    //      )
+    //     ) ;
+    //    // 下面的方法,多次转换后,会不一样.不够安全.
+    //    //return [self stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
 }
 
 - (NSString *)toUtf8Encode {
@@ -167,12 +194,22 @@
 
 - (COLOR_CLASS *)toColor {
     if (self.length == 6) {
-        int red   = (int)strtoul([[self substringWithRange:(NSRange){0, 2}] UTF8String], 0, 16);
-        int green = (int)strtoul([[self substringWithRange:(NSRange){2, 2}] UTF8String], 0, 16);
-        int blue  = (int)strtoul([[self substringWithRange:(NSRange){4, 2}] UTF8String], 0, 16);
+        NSInteger red   = (NSInteger)strtoul([[self substringWithRange:(NSRange){0, 2}] UTF8String], 0, 16);
+        NSInteger green = (NSInteger)strtoul([[self substringWithRange:(NSRange){2, 2}] UTF8String], 0, 16);
+        NSInteger blue  = (NSInteger)strtoul([[self substringWithRange:(NSRange){4, 2}] UTF8String], 0, 16);
         return [COLOR_CLASS colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:1];
     }else{
         return [COLOR_CLASS clearColor];
+    }
+}
+
+// 假如小数点个数为.00, 则不显示小数点后的数字
++ (NSString *)simplePrice:(CGFloat)price {
+    NSString * priceStr = [NSString stringWithFormat:@"%.02f", price];
+    if ([priceStr hasSuffix:@".00"]) {
+        return [NSString stringWithFormat:@"%li", (long)price];
+    } else {
+        return priceStr;
     }
 }
 

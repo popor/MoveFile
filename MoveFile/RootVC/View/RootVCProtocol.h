@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ColumnEntity.h"
+#import "AcceptDragFileView.h"
 
 static NSInteger TagTVTag  = 0;
 static NSInteger folderTVTag = 1;
@@ -24,6 +25,8 @@ static NSInteger folderTVTag = 1;
 @property (nonatomic, strong) NSTableView  * folderTV;
 @property (nonatomic, strong) NSScrollView * folderTV_CSV;
 @property (nonatomic, strong) NSMenu       * folderTVClickMenu;
+
+@property (nonatomic, strong) AcceptDragFileView * dragFileView;
 
 // inject : 外部注入的
 
@@ -61,5 +64,7 @@ static NSInteger folderTVTag = 1;
 - (void)moveAction:(id)sender;
 
 - (void)resetTagTVWidth;
+
+- (void)addFilePathArray:(NSArray *)pathArray;
 
 @end

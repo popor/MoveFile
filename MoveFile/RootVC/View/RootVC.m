@@ -24,6 +24,7 @@
 @implementation RootVC
 @synthesize tagTV, tagTV_CSV, tagTVClickMenu;
 @synthesize folderTV, folderTV_CSV, folderTVClickMenu;
+@synthesize dragFileView;
 
 
 - (instancetype)initWithDic:(NSDictionary *)dic {
@@ -151,10 +152,19 @@
     }
     
     {
+        [self addDragViews]; // dragfile
+        
         self.folderTV_CSV  = [self addFolderTVs];
         self.folderTV      = self.folderTV_CSV.documentView;
         self.folderTV.menu = self.folderTVClickMenu;
         [self.folderTV registerForDraggedTypes:@[NSPasteboardNameDrag]];
+        
+        [self.dragFileView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(self.folderTV_CSV);
+            make.left.mas_equalTo(self.folderTV_CSV);
+            make.width.mas_equalTo(self.folderTV_CSV);
+            make.height.mas_equalTo(self.folderTV_CSV);
+        }];
     }
     
     {
@@ -304,6 +314,20 @@
         [self.tagTVClickMenu addItem:item1];
         [self.tagTVClickMenu addItem:item2];
     }
+}
+
+- (void)addDragViews {
+    self.dragFileView = [AcceptDragFileView new];
+    
+    [self.view addSubview:self.dragFileView];
+    
+    // demo
+    @weakify(self);
+    self.dragFileView.dragAppBlock = ^(NSArray * array) {
+        @strongify(self);
+        
+        [self.present addFilePathArray:array];
+    };
 }
 
 // 开始执行事件,比如获取网络数据

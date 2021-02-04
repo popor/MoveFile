@@ -14,7 +14,7 @@ target 'MoveFile' do
     pod 'FMDB'
     pod 'ReactiveObjC'
     
-    pod 'PoporFoundation'
+    pod 'PoporFoundation', '1.24'
     pod 'PoporFMDB'
     
     # 快捷键?

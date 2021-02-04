@@ -28,6 +28,7 @@
 		18CC3A2521C0DB5E00237BB7 /* RootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CC3A1121C0DB5E00237BB7 /* RootVC.m */; };
 		18CC3A2921C0DB5E00237BB7 /* RootVCInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CC3A1721C0DB5E00237BB7 /* RootVCInteractor.m */; };
 		9BEDA5DA8A3D9736E607EFEB /* Pods_MoveFile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC5609B1E6F8013C408AC81B /* Pods_MoveFile.framework */; };
+		C345641425CBC9D7007037F8 /* AcceptDragFileView.m in Sources */ = {isa = PBXBuildFile; fileRef = C345641225CBC9D7007037F8 /* AcceptDragFileView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,8 @@
 		9F25728B3E7B959B9F932FED /* Pods-MoveFile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoveFile.release.xcconfig"; path = "Target Support Files/Pods-MoveFile/Pods-MoveFile.release.xcconfig"; sourceTree = "<group>"; };
 		AD10651C88EBFEE14BDD3ED3 /* Pods-MoveFile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoveFile.debug.xcconfig"; path = "Target Support Files/Pods-MoveFile/Pods-MoveFile.debug.xcconfig"; sourceTree = "<group>"; };
 		BC5609B1E6F8013C408AC81B /* Pods_MoveFile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoveFile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C345641225CBC9D7007037F8 /* AcceptDragFileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcceptDragFileView.m; sourceTree = "<group>"; };
+		C345641325CBC9D7007037F8 /* AcceptDragFileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcceptDragFileView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				18CC39ED21C0DB5E00237BB7 /* NSView_prefix.h */,
+				C345641125CBC9D7007037F8 /* AcceptDragFileView */,
 				18CC39E721C0DB5E00237BB7 /* iToast */,
 				18CC39E421C0DB5E00237BB7 /* NSBundle */,
 				18CC39EA21C0DB5E00237BB7 /* NSTask_shell */,
@@ -307,6 +311,15 @@
 				9F25728B3E7B959B9F932FED /* Pods-MoveFile.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C345641125CBC9D7007037F8 /* AcceptDragFileView */ = {
+			isa = PBXGroup;
+			children = (
+				C345641325CBC9D7007037F8 /* AcceptDragFileView.h */,
+				C345641225CBC9D7007037F8 /* AcceptDragFileView.m */,
+			);
+			path = AcceptDragFileView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,6 +446,7 @@
 				18CC3A2221C0DB5E00237BB7 /* ColumnEntity.m in Sources */,
 				18CC3A2421C0DB5E00237BB7 /* EditableTextField.m in Sources */,
 				1868E4C5236284240077D524 /* SqliteCofing.m in Sources */,
+				C345641425CBC9D7007037F8 /* AcceptDragFileView.m in Sources */,
 				18CC3A2321C0DB5E00237BB7 /* NSTextField+Address.m in Sources */,
 				18CC3A1D21C0DB5E00237BB7 /* iToast.m in Sources */,
 				18CC3A1E21C0DB5E00237BB7 /* NSTask+shell.m in Sources */,

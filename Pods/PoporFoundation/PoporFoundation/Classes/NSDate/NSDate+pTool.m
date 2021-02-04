@@ -103,7 +103,7 @@
     return [dateFormatter stringFromDate:date];
 }
 
-+ (NSString *)stringFromDate:(NSDate * _Nullable)date formatter:(NSString * _Nullable)formatterString timeZone:(int)timeZone {
++ (NSString *)stringFromDate:(NSDate * _Nullable)date formatter:(NSString * _Nullable)formatterString timeZone:(NSInteger)timeZone {
     NSDateFormatter *dateFormatter = [NSDate defaultDateFormatter:formatterString];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:3600* (timeZone)]];
     
@@ -114,7 +114,7 @@
     return [NSDate stringFromDate:self formatter:formatterString];
 }
 
-- (NSString *)stringWithFormatter:(NSString * _Nullable)formatterString timeZone:(int)timeZone {
+- (NSString *)stringWithFormatter:(NSString * _Nullable)formatterString timeZone:(NSInteger)timeZone {
     return [NSDate stringFromDate:self formatter:formatterString timeZone:timeZone];
 }
 
@@ -177,16 +177,61 @@
 }
 
 #pragma mark - 获取时差
-+ (int)getZoneHour {
++ (NSInteger)getZoneHour {
     NSTimeZone * zone     = [NSTimeZone localTimeZone];
     NSString * secondTime = [zone.description stringWithREG:@"offset\\s+-?\\d+"];
     //[NSString stringWithReg:zone.description withREG:];
     secondTime            = [secondTime stringWithREG:@"-?\\d+"];
-   // [NSString stringWithReg:secondTime withREG:];
-    NSLog(@"____________description: %@", zone.description);
-    NSLog(@"____________secondTime: %@", secondTime);
-    NSLog(@"____________zoneTime  : %i", (int)([secondTime integerValue]/3600));
-    return (int)([secondTime integerValue]/3600);
+    
+    //[NSString stringWithReg:secondTime withREG:];
+    //NSLog(@"____________description: %@", zone.description);
+    //NSLog(@"____________secondTime: %@", secondTime);
+    //NSLog(@"____________zoneTime  : %i", (NSInteger)([secondTime integerValue]/3600));
+    
+    return (NSInteger)([secondTime integerValue]/3600);
+}
+
+#pragma mark - 时钟text
++ (NSString *)clockText:(NSTimeInterval)time {
+    NSInteger hour = floor(time / 3600);
+    CGFloat minute = fmod(floor(time/60), 60);
+    CGFloat second = fmod(time, 60);
+    
+    if (hour < 0 || minute < 0 || second < 0) {
+        return @"00:00";
+    }
+    if (hour > 0) {
+        return [NSString stringWithFormat:@"%02li:%02.0f:%02.0f", (long)hour, minute, second];
+    } else {
+        return [NSString stringWithFormat:@"%02.0f:%02.0f", minute, second];
+    }
+}
+
+/**
+ 如果secondKey为nil, 则不显示秒部分, 同理于minuteKey.
+ 假如secondKey非空, 则minuteKey不能为空
+ */
++ (NSString *)clockText:(NSTimeInterval)time hour:(NSString *)hourKey minute:(NSString *_Nullable)minuteKey second:(NSString *_Nullable)secondKey {
+    NSInteger hour = floor(time / 3600);
+    CGFloat minute = fmod(floor(time/60), 60);
+    CGFloat second = fmod(time, 60);
+    
+    if (hour < 0 || minute < 0 || second < 0) {
+        minute = 0;
+        second = 0;
+    }
+    
+    NSMutableString * clockText = [NSMutableString new];
+    if (hour > 0) {
+        [clockText appendFormat:@"%li%@", (long)hour, hourKey];
+    }
+    if (minuteKey) {
+        [clockText appendFormat:@"%02.0f%@", minute, minuteKey];
+    }
+    if (secondKey) {
+        [clockText appendFormat:@"%02.0f%@", second, secondKey];
+    }
+    return clockText;
 }
 
 @end

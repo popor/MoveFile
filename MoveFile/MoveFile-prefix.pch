@@ -11,5 +11,6 @@
 
 #import <Masonry/Masonry.h>
 #import "NSView_prefix.h"
+#import <ReactiveObjC/ReactiveObjC.h>
 
 #endif /* MoveFile_prefix_h */
