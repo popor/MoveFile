@@ -173,22 +173,27 @@
 
 - (void)updateTagEntity:(MoveTagEntity *)entity title:(NSString *)title {
     [PDB updateEntity:entity set:@"title" equal:title where:TagIDKey equal:entity.tagID];
+    entity.title = title;
 }
 
 - (void)updateEntity:(MoveFolderEntity *)entity move:(BOOL)move {
     [PDB updateEntity:entity set:@"move" equal:@(move) where:FolderIDKey equal:entity.folderID];
+    entity.move = move;
 }
 
 - (void)updateEntity:(MoveFolderEntity *)entity tip:(NSString *)tip {
     [PDB updateEntity:entity set:@"tip" equal:tip where:FolderIDKey equal:entity.folderID];
+    entity.tip = tip;
 }
 
 - (void)updateEntity:(MoveFolderEntity *)entity originPath:(NSString *)originPath {
     [PDB updateEntity:entity set:@"originPath" equal:originPath where:FolderIDKey equal:entity.folderID];
+    entity.originPath = originPath;
 }
 
 - (void)updateEntity:(MoveFolderEntity *)entity targetPath:(NSString *)targetPath {
     [PDB updateEntity:entity set:@"targetPath" equal:targetPath where:FolderIDKey equal:entity.folderID];
+    entity.targetPath = targetPath;
 }
 
 @end
