@@ -4,7 +4,7 @@ PODS:
   - FMDB/standard (2.7.5)
   - JSONModel (1.8.0)
   - Masonry (1.1.0)
-  - PoporFMDB (1.11):
+  - PoporFMDB (1.12):
     - FMDB
   - PoporFoundation (1.24):
     - PoporFoundation/KVO (= 1.24)
@@ -57,7 +57,7 @@ DEPENDENCIES:
   - FMDB
   - JSONModel
   - Masonry
-  - PoporFMDB (= 1.11)
+  - PoporFMDB (from `https://github.com/popor/PoporFMDB.git`, branch `main`, tag `1.12`)
   - PoporFoundation (= 1.24)
   - ReactiveObjC
 
@@ -66,18 +66,29 @@ SPEC REPOS:
     - FMDB
     - JSONModel
     - Masonry
-    - PoporFMDB
     - PoporFoundation
     - ReactiveObjC
+
+EXTERNAL SOURCES:
+  PoporFMDB:
+    :branch: main
+    :git: https://github.com/popor/PoporFMDB.git
+    :tag: '1.12'
+
+CHECKOUT OPTIONS:
+  PoporFMDB:
+    :branch: main
+    :git: https://github.com/popor/PoporFMDB.git
+    :tag: '1.12'
 
 SPEC CHECKSUMS:
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  PoporFMDB: 2fd1a10f04d35f6fda053364aa4e955f7c273e50
+  PoporFMDB: 897923cceb806ac976bca23e65a302222da293b6
   PoporFoundation: 0861e1064f0afb658c1254537e0447123f135ac3
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
 
-PODFILE CHECKSUM: 25168f4e34efdb1de55306abdb64396bbcbdc3c0
+PODFILE CHECKSUM: 6fc6a4ec5160a9b224b65eadaf9a416fdd2fd86e
 
 COCOAPODS: 1.10.1

@@ -15,7 +15,9 @@ target 'MoveFile' do
     pod 'ReactiveObjC'
     
     pod 'PoporFoundation', '1.24'
-    pod 'PoporFMDB', '1.11'
+    
+    #pod 'PoporFMDB', '1.12'
+    pod 'PoporFMDB', :git=>'https://github.com/popor/PoporFMDB.git' , :branch => 'main', :tag => '1.12'
     
     # 快捷键?
     # pod 'MASShortcut'
