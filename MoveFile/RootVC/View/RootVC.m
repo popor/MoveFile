@@ -174,9 +174,10 @@
 - (NSScrollView *)addTagTVs {
     CGFloat width = 100;
     // create a table view and a scroll view
-    NSScrollView * tableContainer  = [[NSScrollView alloc] initWithFrame:CGRectZero];
-    NSTableView * tableView        = [[NSTableView alloc] initWithFrame:tableContainer.bounds];
-    tableView.tag = TagTVTag;
+    NSScrollView * sv = [[NSScrollView alloc] initWithFrame:CGRectZero];
+    NSTableView  * tv = [[NSTableView alloc] initWithFrame:sv.bounds];
+    tv.tag = TagTVTag;
+    sv.borderType = NSLineBorder; // 可以使得TV仅仅靠边
     
     NSArray * folderEntityArray = [self.present columnTagArray];
     for (int i=0; i<folderEntityArray.count; i++) {
@@ -187,35 +188,43 @@
         column.title         = entity.title;
         column.headerToolTip = entity.tip;
         
-        [tableView addTableColumn:column];
+        [tv addTableColumn:column];
         
         width = entity.width;
     }
     
-    tableView.delegate                   = self.present;
-    tableView.dataSource                 = self.present;
-    tableContainer.documentView          = tableView;
-    tableContainer.hasVerticalScroller   = YES;
-    tableContainer.hasHorizontalScroller = YES;
+    tv.delegate              = self.present;
+    tv.dataSource            = self.present;
+    sv.documentView          = tv;
+    sv.hasVerticalScroller   = YES;
+    sv.hasHorizontalScroller = YES;
     
-    [self.view addSubview:tableContainer];
-    [tableView reloadData];
+    // 设计圆角
+    [sv setWantsLayer:YES];
+    [sv.layer setCornerRadius:4];
+    [sv.contentView setWantsLayer:YES];
+    [sv.contentView.layer setCornerRadius:4.0f];
     
-    [tableContainer mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.view addSubview:sv];
+    [tv reloadData];
+    
+    [sv mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(10);
         make.top.mas_equalTo(self.moveBT.mas_bottom).mas_offset(10);
         make.width.mas_equalTo(width+20);
         make.bottom.mas_equalTo(-10);
     }];
     
-    return tableContainer;
+    return sv;
 }
 
 - (NSScrollView *)addFolderTVs {
     // create a table view and a scroll view
-    NSScrollView * tableContainer  = [[NSScrollView alloc] initWithFrame:CGRectZero];
-    NSTableView * tableView        = [[NSTableView alloc] initWithFrame:tableContainer.bounds];
-    tableView.tag = folderTVTag;
+    NSScrollView * sv  = [[NSScrollView alloc] initWithFrame:CGRectZero];
+    NSTableView  * tv  = [[NSTableView alloc] initWithFrame:sv.bounds];
+    tv.tag = folderTVTag;
+    sv.borderType = NSLineBorder; // 可以使得TV仅仅靠边
+    
     NSArray * folderEntityArray = [self.present columnFolderArray];
     for (int i=0; i<folderEntityArray.count; i++) {
         ColumnEntity * entity = folderEntityArray[i];
@@ -225,26 +234,32 @@
         column.title         = entity.title;
         column.headerToolTip = entity.tip;
         
-        [tableView addTableColumn:column];
+        [tv addTableColumn:column];
     }
     
-    tableView.delegate                   = self.present;
-    tableView.dataSource                 = self.present;
-    tableContainer.documentView          = tableView;
-    tableContainer.hasVerticalScroller   = YES;
-    tableContainer.hasHorizontalScroller = YES;
+    tv.delegate              = self.present;
+    tv.dataSource            = self.present;
+    sv.documentView          = tv;
+    sv.hasVerticalScroller   = YES;
+    sv.hasHorizontalScroller = YES;
     
-    [self.view addSubview:tableContainer];
-    [tableView reloadData];
+    // 设计圆角
+    [sv setWantsLayer:YES];
+    [sv.layer setCornerRadius:4];
+    [sv.contentView setWantsLayer:YES];
+    [sv.contentView.layer setCornerRadius:4.0f];
     
-    [tableContainer mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.view addSubview:sv];
+    [tv reloadData];
+    
+    [sv mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.tagTV_CSV.mas_right).mas_offset(5);
         make.top.mas_equalTo(self.moveBT.mas_bottom).mas_offset(10);
         make.right.mas_equalTo(-10);
         make.bottom.mas_equalTo(self.tagTV_CSV.mas_bottom);
     }];
     
-    return tableContainer;
+    return sv;
 }
 
 #pragma mark - addMenu
