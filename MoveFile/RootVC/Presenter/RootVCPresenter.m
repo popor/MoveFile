@@ -13,6 +13,7 @@
 
 #import <ReactiveObjC/ReactiveObjC.h>
 #import "EditableTextField.h"
+#import "NSTableView+pResponse.h"
 
 static int CellHeight = 23;
 
@@ -653,37 +654,34 @@ static int CellHeight = 23;
 
 // 键盘通知事件
 - (void)folderTVDeleteNcEvent {
-    //    NSTableView * tv0 = self.view.tagTV;
-    //    NSTableView * tv1 = self.view.folderTV;
-    //
-    //    tv0.selectedRow;
-    //    NSView * dd;
-    //
-    //    NSLogInteger(tv0.selectedRow);
-    //    NSLogInteger(tv1.selectedRow);
-    //
-    //    return;
-    NSInteger selectRow = self.view.folderTV.selectedRow;
-    if (selectRow < 0 || selectRow > self.interactor.folderEntityArray.count) {
-        return;
+    if (self.view.tagTV.firstResponse) {
+        AlertToastTitle(@"快捷键暂不支持删除 标签", self.view.vc.view);
     }
     
-    MoveFolderEntity * entity = self.interactor.folderEntityArray[selectRow];
-    
-    [self.interactor deleteEntity:entity];
-    [self.interactor.folderEntityArray removeObject:entity];
-    
-    [self.view.folderTV reloadData];
-    
-    if (self.interactor.folderEntityArray.count > 0) {
-        if (selectRow < self.interactor.folderEntityArray.count) {
-            NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:selectRow];
-            [self.view.folderTV selectRowIndexes:indexSet byExtendingSelection:NO];
-        } else {
-            NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:self.interactor.folderEntityArray.count -1];
-            [self.view.folderTV selectRowIndexes:indexSet byExtendingSelection:NO];
+    else if (self.view.folderTV.firstResponse) {
+        NSInteger selectRow = self.view.folderTV.selectedRow;
+        if (selectRow < 0 || selectRow > self.interactor.folderEntityArray.count) {
+            return;
+        }
+        
+        MoveFolderEntity * entity = self.interactor.folderEntityArray[selectRow];
+        
+        [self.interactor deleteEntity:entity];
+        [self.interactor.folderEntityArray removeObject:entity];
+        
+        [self.view.folderTV reloadData];
+        
+        if (self.interactor.folderEntityArray.count > 0) {
+            if (selectRow < self.interactor.folderEntityArray.count) {
+                NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:selectRow];
+                [self.view.folderTV selectRowIndexes:indexSet byExtendingSelection:NO];
+            } else {
+                NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:self.interactor.folderEntityArray.count -1];
+                [self.view.folderTV selectRowIndexes:indexSet byExtendingSelection:NO];
+            }
         }
     }
+    
 }
 
 - (void)folderTVClearAllAction:(id)sender {

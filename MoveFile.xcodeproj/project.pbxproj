@@ -30,6 +30,7 @@
 		9BEDA5DA8A3D9736E607EFEB /* Pods_MoveFile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC5609B1E6F8013C408AC81B /* Pods_MoveFile.framework */; };
 		C345641425CBC9D7007037F8 /* AcceptDragFileView.m in Sources */ = {isa = PBXBuildFile; fileRef = C345641225CBC9D7007037F8 /* AcceptDragFileView.m */; };
 		C39B79C425CE36640023E9AE /* AppKeepFront.m in Sources */ = {isa = PBXBuildFile; fileRef = C39B79C225CE36630023E9AE /* AppKeepFront.m */; };
+		C39B79CA25CE49FA0023E9AE /* NSTableView+pResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C39B79C925CE49FA0023E9AE /* NSTableView+pResponse.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,8 @@
 		C345641325CBC9D7007037F8 /* AcceptDragFileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcceptDragFileView.h; sourceTree = "<group>"; };
 		C39B79C225CE36630023E9AE /* AppKeepFront.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppKeepFront.m; sourceTree = "<group>"; };
 		C39B79C325CE36640023E9AE /* AppKeepFront.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppKeepFront.h; sourceTree = "<group>"; };
+		C39B79C825CE49FA0023E9AE /* NSTableView+pResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTableView+pResponse.h"; sourceTree = "<group>"; };
+		C39B79C925CE49FA0023E9AE /* NSTableView+pResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTableView+pResponse.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +206,7 @@
 				18CC39E721C0DB5E00237BB7 /* iToast */,
 				18CC39E421C0DB5E00237BB7 /* NSBundle */,
 				18CC39EA21C0DB5E00237BB7 /* NSTask_shell */,
+				C39B79C725CE49BF0023E9AE /* NSTableView+pResponse */,
 			);
 			path = NSView;
 			sourceTree = "<group>";
@@ -335,6 +339,15 @@
 			path = AppKeepFront;
 			sourceTree = "<group>";
 		};
+		C39B79C725CE49BF0023E9AE /* NSTableView+pResponse */ = {
+			isa = PBXGroup;
+			children = (
+				C39B79C825CE49FA0023E9AE /* NSTableView+pResponse.h */,
+				C39B79C925CE49FA0023E9AE /* NSTableView+pResponse.m */,
+			);
+			path = "NSTableView+pResponse";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -453,6 +466,7 @@
 			files = (
 				18CC3A2121C0DB5E00237BB7 /* MoveTagEntity.m in Sources */,
 				18CC39D821C0D9D200237BB7 /* main.m in Sources */,
+				C39B79CA25CE49FA0023E9AE /* NSTableView+pResponse.m in Sources */,
 				18CC3A2921C0DB5E00237BB7 /* RootVCInteractor.m in Sources */,
 				1868E4C0236283760077D524 /* WindowFrameTool.m in Sources */,
 				18CC3A1C21C0DB5E00237BB7 /* NSBundle+Tool.m in Sources */,
@@ -605,7 +619,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 5TP98E5R7H;
 				GCC_PREFIX_HEADER = "MoveFile/MoveFile-prefix.pch";
 				INFOPLIST_FILE = MoveFile/Info.plist;
@@ -614,7 +628,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.popor.MoveFile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -629,7 +643,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 5TP98E5R7H;
 				GCC_PREFIX_HEADER = "MoveFile/MoveFile-prefix.pch";
 				INFOPLIST_FILE = MoveFile/Info.plist;
@@ -638,7 +652,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.popor.MoveFile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
