@@ -10,6 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+#define AppKeepFrontResume [[AppKeepFront share] updateKeepFrontStatus];
+#define AppKeepFrontYES    [[AppKeepFront share] keepAtFront:YES];
+#define AppKeepFrontNO     [[AppKeepFront share] keepAtFront:NO];
+
 @interface AppKeepFront : NSObject
 
 @property (nonatomic, strong) NSButton * frontBT_titleBar;
@@ -19,6 +23,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)showTitleBarFrontBT;
 
 - (void)addMgjRouterEvent;
+
+- (void)updateKeepFrontStatus;
+
+- (void)keepAtFront:(BOOL)front;
 
 @end
 

@@ -409,6 +409,7 @@ static int CellHeight = 23;
                     [weakSelf.view.tagTV reloadData];
                 }
             }
+            AppKeepFrontResume;
         }];
         [accessory becomeFirstResponder];
     }
@@ -444,6 +445,10 @@ static int CellHeight = 23;
             [self.interactor addNewPath:path tagID:tagEntity.tagID];
         }
         [self.view.folderTV reloadData];
+        
+        AppKeepFrontResume;
+    } else {
+        AppKeepFrontResume;
     }
 }
 
@@ -648,6 +653,16 @@ static int CellHeight = 23;
 
 // 键盘通知事件
 - (void)folderTVDeleteNcEvent {
+    //    NSTableView * tv0 = self.view.tagTV;
+    //    NSTableView * tv1 = self.view.folderTV;
+    //
+    //    tv0.selectedRow;
+    //    NSView * dd;
+    //
+    //    NSLogInteger(tv0.selectedRow);
+    //    NSLogInteger(tv1.selectedRow);
+    //
+    //    return;
     NSInteger selectRow = self.view.folderTV.selectedRow;
     if (selectRow < 0 || selectRow > self.interactor.folderEntityArray.count) {
         return;

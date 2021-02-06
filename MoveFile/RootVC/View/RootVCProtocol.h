@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "ColumnEntity.h"
 #import "AcceptDragFileView.h"
+#import "AppKeepFront.h"
 
 static NSInteger TagTVTag  = 0;
 static NSInteger folderTVTag = 1;
