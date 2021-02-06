@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "SqliteCofing.h"
 #import "WindowFrameTool.h"
+#import "AppKeepFront.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +18,14 @@
 @implementation AppDelegate
 
 - (void)applicationWillFinishLaunching:(NSNotification *)notification {
+#if TARGET_OS_MAC//模拟器
+    NSString * macOSInjectionPath = @"/Applications/InjectionIII.app/Contents/Resources/macOSInjection.bundle";
+    if ([[NSFileManager defaultManager] fileExistsAtPath:macOSInjectionPath]) {
+        [[NSBundle bundleWithPath:macOSInjectionPath] load];
+    }
+#endif
     
+    [[AppKeepFront share] showTitleBarFrontBT];
     [SqliteCofing updateTable];
     
     NSWindow * window = [NSApplication sharedApplication].keyWindow;

@@ -29,6 +29,7 @@
 		18CC3A2921C0DB5E00237BB7 /* RootVCInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CC3A1721C0DB5E00237BB7 /* RootVCInteractor.m */; };
 		9BEDA5DA8A3D9736E607EFEB /* Pods_MoveFile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC5609B1E6F8013C408AC81B /* Pods_MoveFile.framework */; };
 		C345641425CBC9D7007037F8 /* AcceptDragFileView.m in Sources */ = {isa = PBXBuildFile; fileRef = C345641225CBC9D7007037F8 /* AcceptDragFileView.m */; };
+		C39B79C425CE36640023E9AE /* AppKeepFront.m in Sources */ = {isa = PBXBuildFile; fileRef = C39B79C225CE36630023E9AE /* AppKeepFront.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,8 @@
 		BC5609B1E6F8013C408AC81B /* Pods_MoveFile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoveFile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C345641225CBC9D7007037F8 /* AcceptDragFileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcceptDragFileView.m; sourceTree = "<group>"; };
 		C345641325CBC9D7007037F8 /* AcceptDragFileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcceptDragFileView.h; sourceTree = "<group>"; };
+		C39B79C225CE36630023E9AE /* AppKeepFront.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppKeepFront.m; sourceTree = "<group>"; };
+		C39B79C325CE36640023E9AE /* AppKeepFront.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppKeepFront.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				18CC39ED21C0DB5E00237BB7 /* NSView_prefix.h */,
+				C39B79C125CE36630023E9AE /* AppKeepFront */,
 				C345641125CBC9D7007037F8 /* AcceptDragFileView */,
 				18CC39E721C0DB5E00237BB7 /* iToast */,
 				18CC39E421C0DB5E00237BB7 /* NSBundle */,
@@ -322,6 +326,15 @@
 			path = AcceptDragFileView;
 			sourceTree = "<group>";
 		};
+		C39B79C125CE36630023E9AE /* AppKeepFront */ = {
+			isa = PBXGroup;
+			children = (
+				C39B79C325CE36640023E9AE /* AppKeepFront.h */,
+				C39B79C225CE36630023E9AE /* AppKeepFront.m */,
+			);
+			path = AppKeepFront;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -445,6 +458,7 @@
 				18CC3A1C21C0DB5E00237BB7 /* NSBundle+Tool.m in Sources */,
 				18CC3A2221C0DB5E00237BB7 /* ColumnEntity.m in Sources */,
 				18CC3A2421C0DB5E00237BB7 /* EditableTextField.m in Sources */,
+				C39B79C425CE36640023E9AE /* AppKeepFront.m in Sources */,
 				1868E4C5236284240077D524 /* SqliteCofing.m in Sources */,
 				C345641425CBC9D7007037F8 /* AcceptDragFileView.m in Sources */,
 				18CC3A2321C0DB5E00237BB7 /* NSTextField+Address.m in Sources */,
