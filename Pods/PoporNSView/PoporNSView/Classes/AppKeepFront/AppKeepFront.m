@@ -11,8 +11,6 @@
 
 @interface AppKeepFront ()
 
-@property (nonatomic        ) BOOL hasMgj;
-
 @end
 
 @implementation AppKeepFront
@@ -29,7 +27,6 @@
 
 - (void)showTitleBarFrontBT {
     [self addTitleBarFrontBT];
-    [self addMgjRouterEvent];
 }
 
 - (void)addTitleBarFrontBT {
@@ -63,30 +60,6 @@
     }
 }
 
-- (void)addMgjRouterEvent {
-    if (self.hasMgj) {
-        return;
-    }
-    self.hasMgj = YES;
-    //    @weakify(self);
-    //    [MGJRouter registerURLPattern:MUrl_updateKeepFrontStatus toHandler:^(NSDictionary *routerParameters) {
-    //        @strongify(self);
-    //
-    //        [self updateKeepFrontStatus];
-    //    }];
-    //
-    //    [MGJRouter registerURLPattern:MUrl_updateKeepFrontStatusOn toHandler:^(NSDictionary *routerParameters) {
-    //        @strongify(self);
-    //
-    //        [self keepAtFront:YES];
-    //    }];
-    //    [MGJRouter registerURLPattern:MUrl_updateKeepFrontStatusOff toHandler:^(NSDictionary *routerParameters) {
-    //        @strongify(self);
-    //
-    //        [self keepAtFront:NO];
-    //    }];
-}
-
 - (void)keepAtFrontAction:(NSButton *)bt {
     if (bt.state == NSControlStateValueOff) {
         bt.state = NSControlStateValueOff;
@@ -111,12 +84,12 @@
 }
 
 - (void)save__keepFront:(NSString *)__keepFront {
-    [[NSUserDefaults standardUserDefaults] setObject:__keepFront forKey:@"__keepFront"];
+    [[NSUserDefaults standardUserDefaults] setObject:__keepFront forKey:@"PoporNSView_keepFront"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (NSString *)get__keepFront {
-    NSString * info = [[NSUserDefaults standardUserDefaults] objectForKey:@"__keepFront"];
+    NSString * info = [[NSUserDefaults standardUserDefaults] objectForKey:@"PoporNSView_keepFront"];
     return info;
 }
 

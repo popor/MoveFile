@@ -16,9 +16,6 @@
 		18CC39D221C0D9D200237BB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18CC39D121C0D9D200237BB7 /* Assets.xcassets */; };
 		18CC39D521C0D9D200237BB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18CC39D321C0D9D200237BB7 /* Main.storyboard */; };
 		18CC39D821C0D9D200237BB7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CC39D721C0D9D200237BB7 /* main.m */; };
-		18CC3A1C21C0DB5E00237BB7 /* NSBundle+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CC39E621C0DB5E00237BB7 /* NSBundle+Tool.m */; };
-		18CC3A1D21C0DB5E00237BB7 /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CC39E921C0DB5E00237BB7 /* iToast.m */; };
-		18CC3A1E21C0DB5E00237BB7 /* NSTask+shell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CC39EC21C0DB5E00237BB7 /* NSTask+shell.m */; };
 		18CC3A1F21C0DB5E00237BB7 /* RootVCPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CC39FE21C0DB5E00237BB7 /* RootVCPresenter.m */; };
 		18CC3A2021C0DB5E00237BB7 /* MoveFolderEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CC3A0421C0DB5E00237BB7 /* MoveFolderEntity.m */; };
 		18CC3A2121C0DB5E00237BB7 /* MoveTagEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CC3A0521C0DB5E00237BB7 /* MoveTagEntity.m */; };
@@ -28,9 +25,6 @@
 		18CC3A2521C0DB5E00237BB7 /* RootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CC3A1121C0DB5E00237BB7 /* RootVC.m */; };
 		18CC3A2921C0DB5E00237BB7 /* RootVCInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CC3A1721C0DB5E00237BB7 /* RootVCInteractor.m */; };
 		9BEDA5DA8A3D9736E607EFEB /* Pods_MoveFile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC5609B1E6F8013C408AC81B /* Pods_MoveFile.framework */; };
-		C345641425CBC9D7007037F8 /* AcceptDragFileView.m in Sources */ = {isa = PBXBuildFile; fileRef = C345641225CBC9D7007037F8 /* AcceptDragFileView.m */; };
-		C39B79C425CE36640023E9AE /* AppKeepFront.m in Sources */ = {isa = PBXBuildFile; fileRef = C39B79C225CE36630023E9AE /* AppKeepFront.m */; };
-		C39B79CA25CE49FA0023E9AE /* NSTableView+pResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C39B79C925CE49FA0023E9AE /* NSTableView+pResponse.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,12 +45,6 @@
 		18CC39D621C0D9D200237BB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18CC39D721C0D9D200237BB7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18CC39D921C0D9D200237BB7 /* MoveFile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MoveFile.entitlements; sourceTree = "<group>"; };
-		18CC39E521C0DB5E00237BB7 /* NSBundle+Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Tool.h"; sourceTree = "<group>"; };
-		18CC39E621C0DB5E00237BB7 /* NSBundle+Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Tool.m"; sourceTree = "<group>"; };
-		18CC39E821C0DB5E00237BB7 /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iToast.h; sourceTree = "<group>"; };
-		18CC39E921C0DB5E00237BB7 /* iToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iToast.m; sourceTree = "<group>"; };
-		18CC39EB21C0DB5E00237BB7 /* NSTask+shell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTask+shell.h"; sourceTree = "<group>"; };
-		18CC39EC21C0DB5E00237BB7 /* NSTask+shell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTask+shell.m"; sourceTree = "<group>"; };
 		18CC39ED21C0DB5E00237BB7 /* NSView_prefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSView_prefix.h; sourceTree = "<group>"; };
 		18CC39FE21C0DB5E00237BB7 /* RootVCPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootVCPresenter.m; sourceTree = "<group>"; };
 		18CC39FF21C0DB5E00237BB7 /* RootVCPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootVCPresenter.h; sourceTree = "<group>"; };
@@ -79,12 +67,6 @@
 		9F25728B3E7B959B9F932FED /* Pods-MoveFile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoveFile.release.xcconfig"; path = "Target Support Files/Pods-MoveFile/Pods-MoveFile.release.xcconfig"; sourceTree = "<group>"; };
 		AD10651C88EBFEE14BDD3ED3 /* Pods-MoveFile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoveFile.debug.xcconfig"; path = "Target Support Files/Pods-MoveFile/Pods-MoveFile.debug.xcconfig"; sourceTree = "<group>"; };
 		BC5609B1E6F8013C408AC81B /* Pods_MoveFile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoveFile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C345641225CBC9D7007037F8 /* AcceptDragFileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcceptDragFileView.m; sourceTree = "<group>"; };
-		C345641325CBC9D7007037F8 /* AcceptDragFileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcceptDragFileView.h; sourceTree = "<group>"; };
-		C39B79C225CE36630023E9AE /* AppKeepFront.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppKeepFront.m; sourceTree = "<group>"; };
-		C39B79C325CE36640023E9AE /* AppKeepFront.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppKeepFront.h; sourceTree = "<group>"; };
-		C39B79C825CE49FA0023E9AE /* NSTableView+pResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTableView+pResponse.h"; sourceTree = "<group>"; };
-		C39B79C925CE49FA0023E9AE /* NSTableView+pResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTableView+pResponse.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,41 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				18CC39ED21C0DB5E00237BB7 /* NSView_prefix.h */,
-				C39B79C125CE36630023E9AE /* AppKeepFront */,
-				C345641125CBC9D7007037F8 /* AcceptDragFileView */,
-				18CC39E721C0DB5E00237BB7 /* iToast */,
-				18CC39E421C0DB5E00237BB7 /* NSBundle */,
-				18CC39EA21C0DB5E00237BB7 /* NSTask_shell */,
-				C39B79C725CE49BF0023E9AE /* NSTableView+pResponse */,
 			);
 			path = NSView;
-			sourceTree = "<group>";
-		};
-		18CC39E421C0DB5E00237BB7 /* NSBundle */ = {
-			isa = PBXGroup;
-			children = (
-				18CC39E521C0DB5E00237BB7 /* NSBundle+Tool.h */,
-				18CC39E621C0DB5E00237BB7 /* NSBundle+Tool.m */,
-			);
-			path = NSBundle;
-			sourceTree = "<group>";
-		};
-		18CC39E721C0DB5E00237BB7 /* iToast */ = {
-			isa = PBXGroup;
-			children = (
-				18CC39E821C0DB5E00237BB7 /* iToast.h */,
-				18CC39E921C0DB5E00237BB7 /* iToast.m */,
-			);
-			path = iToast;
-			sourceTree = "<group>";
-		};
-		18CC39EA21C0DB5E00237BB7 /* NSTask_shell */ = {
-			isa = PBXGroup;
-			children = (
-				18CC39EB21C0DB5E00237BB7 /* NSTask+shell.h */,
-				18CC39EC21C0DB5E00237BB7 /* NSTask+shell.m */,
-			);
-			path = NSTask_shell;
 			sourceTree = "<group>";
 		};
 		18CC39FC21C0DB5E00237BB7 /* RootVC */ = {
@@ -319,33 +268,6 @@
 				9F25728B3E7B959B9F932FED /* Pods-MoveFile.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		C345641125CBC9D7007037F8 /* AcceptDragFileView */ = {
-			isa = PBXGroup;
-			children = (
-				C345641325CBC9D7007037F8 /* AcceptDragFileView.h */,
-				C345641225CBC9D7007037F8 /* AcceptDragFileView.m */,
-			);
-			path = AcceptDragFileView;
-			sourceTree = "<group>";
-		};
-		C39B79C125CE36630023E9AE /* AppKeepFront */ = {
-			isa = PBXGroup;
-			children = (
-				C39B79C325CE36640023E9AE /* AppKeepFront.h */,
-				C39B79C225CE36630023E9AE /* AppKeepFront.m */,
-			);
-			path = AppKeepFront;
-			sourceTree = "<group>";
-		};
-		C39B79C725CE49BF0023E9AE /* NSTableView+pResponse */ = {
-			isa = PBXGroup;
-			children = (
-				C39B79C825CE49FA0023E9AE /* NSTableView+pResponse.h */,
-				C39B79C925CE49FA0023E9AE /* NSTableView+pResponse.m */,
-			);
-			path = "NSTableView+pResponse";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -466,18 +388,12 @@
 			files = (
 				18CC3A2121C0DB5E00237BB7 /* MoveTagEntity.m in Sources */,
 				18CC39D821C0D9D200237BB7 /* main.m in Sources */,
-				C39B79CA25CE49FA0023E9AE /* NSTableView+pResponse.m in Sources */,
 				18CC3A2921C0DB5E00237BB7 /* RootVCInteractor.m in Sources */,
 				1868E4C0236283760077D524 /* WindowFrameTool.m in Sources */,
-				18CC3A1C21C0DB5E00237BB7 /* NSBundle+Tool.m in Sources */,
 				18CC3A2221C0DB5E00237BB7 /* ColumnEntity.m in Sources */,
 				18CC3A2421C0DB5E00237BB7 /* EditableTextField.m in Sources */,
-				C39B79C425CE36640023E9AE /* AppKeepFront.m in Sources */,
 				1868E4C5236284240077D524 /* SqliteCofing.m in Sources */,
-				C345641425CBC9D7007037F8 /* AcceptDragFileView.m in Sources */,
 				18CC3A2321C0DB5E00237BB7 /* NSTextField+Address.m in Sources */,
-				18CC3A1D21C0DB5E00237BB7 /* iToast.m in Sources */,
-				18CC3A1E21C0DB5E00237BB7 /* NSTask+shell.m in Sources */,
 				18CC3A2021C0DB5E00237BB7 /* MoveFolderEntity.m in Sources */,
 				18CC3A1F21C0DB5E00237BB7 /* RootVCPresenter.m in Sources */,
 				18CC39CD21C0D9D000237BB7 /* AppDelegate.m in Sources */,

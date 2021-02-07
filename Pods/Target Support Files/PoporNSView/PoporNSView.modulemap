@@ -1,0 +1,6 @@
+framework module PoporNSView {
+  umbrella header "PoporNSView-umbrella.h"
+
+  export *
+  module * { export * }
+}

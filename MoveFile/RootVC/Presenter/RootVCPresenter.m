@@ -13,7 +13,6 @@
 
 #import <ReactiveObjC/ReactiveObjC.h>
 #import "EditableTextField.h"
-#import "NSTableView+pResponse.h"
 
 static int CellHeight = 23;
 

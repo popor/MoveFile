@@ -1,6 +1,6 @@
 //
 //  NSTableView+pResponse.h
-//  MoveFile
+//  PoporNSView
 //
 //  Created by popor on 2021/2/6.
 //  Copyright © 2021 apple. All rights reserved.

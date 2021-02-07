@@ -4,4 +4,5 @@ ${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework
 ${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework
 ${BUILT_PRODUCTS_DIR}/PoporFMDB/PoporFMDB.framework
 ${BUILT_PRODUCTS_DIR}/PoporFoundation/PoporFoundation.framework
+${BUILT_PRODUCTS_DIR}/PoporNSView/PoporNSView.framework
 ${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework

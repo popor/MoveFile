@@ -22,8 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)showTitleBarFrontBT;
 
-- (void)addMgjRouterEvent;
-
 - (void)updateKeepFrontStatus;
 
 - (void)keepAtFront:(BOOL)front;

@@ -51,6 +51,30 @@ PODS:
   - PoporFoundation/PFeedbackGenerator (1.24)
   - PoporFoundation/Prefix (1.24):
     - PoporFoundation/Os
+  - PoporNSView (1.0.3):
+    - Masonry
+    - PoporNSView/AcceptDragFileView (= 1.0.3)
+    - PoporNSView/AppKeepFront (= 1.0.3)
+    - PoporNSView/Font (= 1.0.3)
+    - PoporNSView/iToast (= 1.0.3)
+    - PoporNSView/NSBundle (= 1.0.3)
+    - PoporNSView/NSTableView (= 1.0.3)
+    - PoporNSView/NSTask (= 1.0.3)
+  - PoporNSView/AcceptDragFileView (1.0.3):
+    - Masonry
+  - PoporNSView/AppKeepFront (1.0.3):
+    - Masonry
+  - PoporNSView/Font (1.0.3):
+    - Masonry
+  - PoporNSView/iToast (1.0.3):
+    - Masonry
+  - PoporNSView/NSBundle (1.0.3):
+    - Masonry
+  - PoporNSView/NSTableView (1.0.3):
+    - Masonry
+    - PoporFoundation/NSObject
+  - PoporNSView/NSTask (1.0.3):
+    - Masonry
   - ReactiveObjC (3.1.1)
 
 DEPENDENCIES:
@@ -59,6 +83,7 @@ DEPENDENCIES:
   - Masonry
   - PoporFMDB (from `https://github.com/popor/PoporFMDB.git`, branch `main`, tag `1.12`)
   - PoporFoundation (= 1.24)
+  - PoporNSView (from `https://github.com/popor/PoporNSView.git`, branch `master`, tag `1.0.3`)
   - ReactiveObjC
 
 SPEC REPOS:
@@ -74,12 +99,20 @@ EXTERNAL SOURCES:
     :branch: main
     :git: https://github.com/popor/PoporFMDB.git
     :tag: '1.12'
+  PoporNSView:
+    :branch: master
+    :git: https://github.com/popor/PoporNSView.git
+    :tag: 1.0.3
 
 CHECKOUT OPTIONS:
   PoporFMDB:
     :branch: main
     :git: https://github.com/popor/PoporFMDB.git
     :tag: '1.12'
+  PoporNSView:
+    :commit: 37898971190baa535b0872df3979b88cfc6cbe78
+    :git: https://github.com/popor/PoporNSView.git
+    :tag: 1.0.3
 
 SPEC CHECKSUMS:
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
@@ -87,8 +120,9 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   PoporFMDB: 897923cceb806ac976bca23e65a302222da293b6
   PoporFoundation: 0861e1064f0afb658c1254537e0447123f135ac3
+  PoporNSView: 5e93065059100244f0a495266f740e9ec0c08e96
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
 
-PODFILE CHECKSUM: 6fc6a4ec5160a9b224b65eadaf9a416fdd2fd86e
+PODFILE CHECKSUM: 645adba107f1e7c6c3a86502936636cec1c3e3a1
 
 COCOAPODS: 1.10.1

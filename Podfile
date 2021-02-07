@@ -31,4 +31,6 @@ target 'MoveFile' do
     # !!!:最终解决方案,,http://www.itstrike.cn/Question/ee0322c9-5b96-4f0e-9f2d-9177425e0613.html, 非常优秀
     #pod 'STPrivilegedTask' # 这个方法没有上述的好.
     
+    pod 'PoporNSView', :git=>'https://github.com/popor/PoporNSView.git' , :branch => 'master', :tag => '1.0.3'
+    
 end

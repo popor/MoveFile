@@ -7,8 +7,6 @@
 //
 
 #import "iToast.h"
-#import <PoporFoundation/NSString+pSize.h>
-#import <PoporFoundation/NSAttributedString+pAtt.h>
 #import <Masonry/Masonry.h>
 
 @import QuartzCore;
@@ -59,9 +57,9 @@
     if (self.font) {
         CGSize size = CGSizeZero;
         if (self.string) {
-            size = [self.string sizeInFont:self.font width:self.maxWidth];
+            size = [self sizeString:self.string font:self.font width:self.maxWidth];
         } else if (self.attributedString) {
-            size = [self.attributedString sizeWithWidth:self.maxWidth];
+            size = [self sizeAtt:self.attributedString width:self.maxWidth];
         }
         self.frame  = CGRectMake(0, 0, MAX(size.width + self.textContainerInset.width*2, 320), size.height + self.textContainerInset.height*2);
     }
@@ -144,6 +142,37 @@
 #pragma mark - 点击事件
 - (void)mouseDown:(NSEvent *)event {
     [self removeFromSuperview];
+}
+
+#pragma mark - tool
+- (CGSize)sizeString:(NSString *)text font:(NSFont * _Nonnull)font width:(CGFloat)width {
+    if (!text || text.length==0 || !font) {
+        return CGSizeZero;
+    }
+    
+    CGSize size = CGSizeMake(width, 200000.0f);
+    NSDictionary * tdic = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName,nil];
+    
+    if (@available(macOS 10.11, *)) {
+        size =[text boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin |NSStringDrawingUsesFontLeading attributes:tdic context:nil].size;
+        size = CGSizeMake(ceil(size.width), ceil(size.height));
+        return size;
+    } else {
+        NSLog(@"10.11之前的系统不支持该方法: %s", __func__);
+        return CGSizeZero;
+    }
+}
+
+- (CGSize)sizeAtt:(NSAttributedString *)att width:(CGFloat)width {
+    if (!att) {
+        return CGSizeZero;
+    }
+    if (@available(macOS 10.11, *)) {
+        return [att boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading |NSStringDrawingTruncatesLastVisibleLine context:nil].size;
+    } else {
+        NSLog(@"10.11之前的系统不支持该方法: %s", __func__);
+        return CGSizeZero;
+    }
 }
 
 @end
